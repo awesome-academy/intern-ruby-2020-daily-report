@@ -1,0 +1,1 @@
+# intern-ruby-2020-daily-report
