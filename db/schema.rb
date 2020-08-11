@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_11_033226) do
+ActiveRecord::Schema.define(version: 2020_08_12_041117) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci", force: :cascade do |t|
     t.bigint "report_id", null: false
@@ -66,10 +66,10 @@ ActiveRecord::Schema.define(version: 2020_08_11_033226) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.integer "role"
-    t.bigint "division_id", null: false
+    t.integer "role", default: 1
+    t.bigint "division_id", default: 1, null: false
     t.string "password_digest"
-    t.boolean "activated"
+    t.boolean "activated", default: false
     t.string "reset_digest"
     t.datetime "reset_send_at"
     t.datetime "created_at", precision: 6, null: false
