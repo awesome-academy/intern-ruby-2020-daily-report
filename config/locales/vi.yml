@@ -20,3 +20,22 @@ vi:
     error_messages:
       message_error: "Có "
       error: "lỗi"
+  layouts:
+    navbar:
+      log_out: "Log out"
+      toggle_sidebar: "Toggle Sidebar"
+    sidebar:
+      logo: "DAILY REPORT"
+      link_1: "Home"
+      link_2: "Home 1"
+      link_3: "User"
+  essions:
+    ivalid_account_notify: "Tài khỏan hoặc mật khẩu bị sai."
+    login_success_notify: "Đăng nhập thành công!"
+    new:
+      title: "Đăng nhập"
+      email: "Email"
+      password: "Mật khẩu"
+      welcome_login: "Đăng nhập vào tài khoản của bạn"
+      answer_account: "Bạn chưa có tài khoản?"
+      sign_up: "Đăng ký"

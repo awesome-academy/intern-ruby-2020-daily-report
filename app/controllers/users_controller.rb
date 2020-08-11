@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+    redirect_root
   end
 
   def create
@@ -8,6 +9,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:info] = t ".signup_success_notify"
+      log_in @user
       redirect_to root_url
     else
       flash.now[:danger] = t ".signup_faild_notify"

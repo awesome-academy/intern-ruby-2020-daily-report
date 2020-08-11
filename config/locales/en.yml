@@ -8,7 +8,7 @@ en:
     new:
       title: "Sign up"
       answer_account: "Already have an account?"
-      sign_in: "Sign in"
+      sign_in: "Log in"
       register: "Register"
       welcome_register: "Create your account. It's free and only takes a minute."
     form:
@@ -20,3 +20,22 @@ en:
     error_messages:
       message_error: "The form contains"
       error: "error"
+  layouts:
+    navbar:
+      log_out: "Log out"
+      toggle_sidebar: "Toggle Sidebar"
+    sidebar:
+      logo: "DAILY REPORT"
+      link_1: "Home"
+      link_2: "Home 1"
+      link_3: "User"
+  sessions:
+    ivalid_account_notify: "Invalid password or account combination"
+    login_success_notify: "Log in successed!"
+    new:
+      title: "Log in"
+      email: "Email"
+      password: "Password"
+      welcome_login: "Log in to your accout"
+      answer_account: "You don't have an account?"
+      sign_up: "Sign up"
