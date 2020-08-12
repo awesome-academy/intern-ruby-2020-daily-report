@@ -1,0 +1,22 @@
+vi:
+  home:
+    index:
+      title: "Daily report"
+  users:
+    signup_faild_notify: "Đăng ký thất bại!"
+    signup_success_notify: "Đăng ký thành công!"
+    new:
+      title: "Đăng ký"
+      answer_account: "Bạn đã có tài khoản?"
+      sign_in: "Đăng nhập"
+      register: "Đăng ký"
+      welcome_register: "Tạo tài khoản mới cho bạn."
+    form:
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+      confirm_password: "Nhập lại mật khẩu"
+  shared:
+    error_messages:
+      message_error: "Có "
+      error: "lỗi"
