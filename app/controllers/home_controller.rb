@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  def index
-    redirect_login
-  end
+  before_action :redirect_login
+
+  def index; end
 end

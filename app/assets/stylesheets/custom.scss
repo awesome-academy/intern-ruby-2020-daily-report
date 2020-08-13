@@ -201,3 +201,20 @@ a[aria-expanded='true']::before {
 #logo {
   font-weight: 800;
 }
+
+.title-center {
+  text-align: center;
+}
+
+.div-new-report {
+  padding: 0px 40px;
+}
+
+.div-date-report {
+  text-align: right;
+  padding: 20px 10px;
+}
+
+.require-field {
+  color: red;
+}

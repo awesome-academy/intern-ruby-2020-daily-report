@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   USERS_PARAMS = %i(name email password password_confirmation).freeze
 
+  enum role: {member: 0, manager: 1, admin: 2}
+
   belongs_to :division, optional: true
   has_many :reports, dependent: :destroy
   has_many :comments, dependent: :destroy

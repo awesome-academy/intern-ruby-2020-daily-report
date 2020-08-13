@@ -15,16 +15,4 @@ module SessionsHelper
     session.delete :user_id
     @current_user = nil
   end
-
-  def redirect_root
-    return unless logged_in?
-
-    redirect_to root_path
-  end
-
-  def redirect_login
-    return if logged_in?
-
-    redirect_to login_path
-  end
 end

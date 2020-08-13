@@ -5,16 +5,28 @@
     </h3>
   </div>
   <ul class="list-unstyled components">
-    <li class="active">
-      <%= link_to t(".link_1"), "#homeSubmenu", "data-toggle" => "collapse", "aria-expanded" => "false" %>
-      <ul class="collapse list-unstyled" id="homeSubmenu">
-        <li>
-          <%= link_to t(".link_2"), "#" %>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <%= link_to t(".link_3"), "#" %>
-    </li>
+    <% if current_user.member? %>
+      <li>
+        <%= link_to t(".home"), "#" %>
+      </li>
+      <li>
+        <%= link_to t(".division"), "#" %>
+      </li>
+      <li>
+        <%= link_to t(".report"), report_path(current_user) %>
+      </li>
+      <li>
+        <%= link_to t(".request"), "#" %>
+      </li>
+    <% elsif current_user.manager? %>
+      <li>
+        <%= link_to t(".manager"), "#" %>
+      </li>
+    <% elsif current_user.admin? %>
+      <li>
+        <%= link_to t("admin"), "#" %>
+      </li>
+    <% end %>
+
   </ul>
 </nav>
