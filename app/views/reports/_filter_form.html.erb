@@ -12,6 +12,7 @@
       </p>
       <%= select_tag :status, options_for_select(Settings.select_option.filter_status, params[:status]), class: "input-filter-report" %>
     </div>
+    <%= hidden_field_tag :per_page, params[:per_page] %>
     <div class="col-xs-4 div-submit-filter-report">
       <%= submit_tag t(".search"), class: "btn btn-success" %>
     </div>

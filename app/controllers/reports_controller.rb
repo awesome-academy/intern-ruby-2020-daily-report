@@ -59,13 +59,10 @@ class ReportsController < ApplicationController
   end
 
   def paginate_reports
-    @reports = Report.by_users(current_user.id)
-                     .active_reports
-                     .by_date_created(params[:date]&.first)
-                     .by_status(params[:status])
-                     .recent_reports
-                     .page(params[:page])
-                     .per Settings.paginate.items_per_page
+    select_reports
+    per_page = params[:per_page].presence || Settings.paginate.per_page_default
+    @reports = @reports.page(params[:page])
+                       .per per_page
   end
 
   def find_report
@@ -80,5 +77,13 @@ class ReportsController < ApplicationController
     @today_reports = Report.by_users(current_user.id)
                            .by_date_created(Date.current)
                            .active_reports
+  end
+
+  def select_reports
+    @reports = Report.by_users(current_user.id)
+                     .active_reports
+                     .by_date_created(params[:date]&.first)
+                     .by_status(params[:status])
+                     .recent_reports
   end
 end

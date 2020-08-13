@@ -22,6 +22,18 @@
           <%= render partial: "member", collection: @members, as: :member %>
         </tbody>
       </table>
+      <div>
+        <% if @members.total_count > Settings.paginate.per_page_default.to_i %>
+          <span><%= t ".per_page" %></span>
+          <% if params[:per_page].eql? Settings.paginate.per_page_option_1 %>
+            <%= link_per_page_manager_users Settings.paginate.per_page_default %>
+            <span><%= Settings.paginate.per_page_option_1 %></span>
+          <% else %>
+            <span><%= Settings.paginate.per_page_default %></span>
+            <%= link_per_page_manager_users Settings.paginate.per_page_option_1 %>
+          <% end %>
+        <% end %>
+      </div>
       <%= paginate @members %>
     </div>
   </div>

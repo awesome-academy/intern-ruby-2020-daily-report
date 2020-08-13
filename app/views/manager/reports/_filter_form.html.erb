@@ -27,5 +27,8 @@
     <div class="col-xs-12 div-submit-filter-report">
       <%= submit_tag t(".filter"), class: "btn btn-success" %>
     </div>
+    <%= hidden_field_tag :order_status, params[:order_status] %>
+    <%= hidden_field_tag :order_created, params[:order_created] %>
+    <%= hidden_field_tag :per_page, params[:per_page] %>
   <% end %>
 </div></br>
