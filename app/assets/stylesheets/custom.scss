@@ -355,3 +355,13 @@ a[aria-expanded='true']::before {
     color: $text-color;
   }
 }
+
+.sort-report-link {
+  color: $report-sort-link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $report-sort-link-color;
+    text-decoration: none;
+  }
+}
