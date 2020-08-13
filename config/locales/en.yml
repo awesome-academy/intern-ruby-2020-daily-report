@@ -1,6 +1,9 @@
 en:
   js:
     error_comment: "Can not comment! The content is too long (maximum 500 characters)"
+    create_reports:
+      exist_report: "Can not create report! You created a report today."
+      no_division: "Can not create report! You do not belong to any division."
   home:
     index:
       title: "Daily report"
@@ -84,6 +87,7 @@ en:
     find_report_error: "Can not find report!"
     edit_report_success: "Success!"
     edit_report_faild: "Faild!"
+    error_create_path: "Can not create report! You created a report today."
     index:
       daily_report: "Daily report"
       create: "Create"
