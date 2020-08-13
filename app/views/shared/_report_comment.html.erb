@@ -1,7 +1,11 @@
 <div class="card-body">
   <div class="row">
     <div class="col-md-1 padding-0">
-      <%= image_tag Settings.image.default_avatar, class: "img img-circle img-fluid circle-avatar-small" %>
+      <% if comment.user_avatar.attached? %>
+        <%= image_tag comment.user_avatar, class: "img img-circle img-fluid circle-avatar-small" %>
+      <% else %>
+        <%= image_tag Settings.image.default_avatar, class: "img img-circle img-fluid circle-avatar-small" %>
+      <% end %>
     </div>
     <div class="col-md-11 padding-0">
       <div class="col-md-12">

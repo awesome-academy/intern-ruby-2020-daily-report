@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
 
     resources :reports, except: :destroy
-    resources :account, only: %i(index edit)
+    resources :account, only: %i(index edit update)
     resources :comments, only: :create
   end
 end

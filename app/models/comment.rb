@@ -7,7 +7,7 @@ class Comment < ApplicationRecord
   validates :content, presence: true,
     length: {maximum: Settings.validates.comment.max_length}
 
-  delegate :name,  to: :user, prefix: true
+  delegate :name, :avatar, to: :user, prefix: true
 
   scope :order_by_created_at, ->{order created_at: :desc}
   scope :by_report_id, ->(report_id){where(report_id: report_id)}

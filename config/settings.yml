@@ -4,6 +4,7 @@ validates:
     max_length_email: 255
     min_length_password: 6
     validate_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    avatar_type: "image/png, image/gif, image/jpeg"
   report:
     max_length: 500
   comment:
