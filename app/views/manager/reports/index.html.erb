@@ -1,0 +1,14 @@
+<%= provide :title, t(".title") %>
+<div class="div-all-report">
+  <h2 class="title-center report-title">
+    <%= current_user.division.division_name %>
+  </h2>
+  <div class="col-xs-12">
+    <div class="div-report-filter">
+      <%= render "filter_form" %>
+    </div>
+    <div id="all-report">
+      <%= render "all_reports", reports: @reports, num_of_reports: @num_of_reports %>
+    </div>
+  </div>
+</div>

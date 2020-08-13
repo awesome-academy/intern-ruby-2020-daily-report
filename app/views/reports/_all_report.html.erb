@@ -2,7 +2,7 @@
   <h4>
     <%= t ".all_report" %>
     (<span id="num-reports">
-      <%= all_reports.size %>
+      <%= num_of_reports %>
     </span>)
   </h4>
 </div>
@@ -16,8 +16,8 @@
       <th><%= t ".action" %></th>
     </tr>
   </thead>
-  <tbody>
-    <%= render "report_table", reports: reports, page: page %>
+  <tbody id="tbody-all-report">
+    <%= render "report_table", reports: reports %>
   </tbody>
 </table>
 <%= paginate reports %>

@@ -5,13 +5,25 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def check_role? role
+    return if current_user.send("#{role}?")
+
+    redirect_to root_path
+  end
+
+  def belong_to_division?
+    return unless current_user.division_id.eql? Settings.division.default
+
+    redirect_to report_path current_user
+  end
+
   def redirect_root
     return unless logged_in?
 
     redirect_to root_path
   end
 
-  def redirect_login
+  def require_login
     return if logged_in?
 
     redirect_to login_path

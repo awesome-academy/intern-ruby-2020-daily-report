@@ -32,6 +32,7 @@ vi:
       report: "Report"
       admin: "Admin"
       manager: "Manager"
+      account: "Account"
   sessions:
     ivalid_account_notify: "Tài khỏan hoặc mật khẩu bị sai."
     login_success_notify: "Đăng nhập thành công!"
@@ -51,6 +52,7 @@ vi:
     index:
       daily_report: "Daily report"
       create: "Create"
+      belong_division_notify: "You do not belong to any division."
     all_report:
       all_report: "Tất cả report"
       id: "Stt"
@@ -72,3 +74,30 @@ vi:
       search: "Lọc"
       date_created: "Ngày tạo"
       status: "Trạng thái"
+  manager:
+    reports:
+      index:
+        title: "Tất cả report"
+        all_report: "Tất cả report trong "
+      all_reports:
+        all_report: "Tất cả reports"
+        id: "Stt"
+        name: "Tên"
+        emai: "Email"
+        date_created: "Ngày tạo"
+        status: "Trạng thái"
+        action: "Hành động"
+        checked: "Đã kiểm tra"
+        select: "Chọn"
+        show_all: "Tất cả"
+      report_table:
+        detail: "Chi tiết"
+        waiting: "Đang chờ"
+        checked: "Checked"
+      filter_form:
+        filter: "Filter"
+        email: "Email"
+        name: "Tên"
+  account:
+    index:
+      title: "Thông tin tài khoản"

@@ -1,16 +1,16 @@
 <% reports.each.with_index(1) do |report, index| %>
   <tr>
     <td>
-      <%= item_id index, page %>
+      <%= item_id index, params[:page] %>
     </td>
-    <td><%= report.created_at %></td>
-    <td><%= report.updated_at %></td>
+    <td><%= report.created_at.strftime Settings.date.validate %></td>
+    <td><%= report.updated_at.strftime Settings.date.validate %></td>
     <td><%= report.status %></td>
     <td>
       <%= t ".detail" %>
       |
-      <% if report.waitting? %>
-        <%= link_to t(".delete"), report_path(report), method: :put, data: { confirm: t(".confirm_delete") }, remote: :true %>
+      <% if report.waiting? %>
+        <%= link_to t(".delete"), report_path(report, status: params[:status], date: params[:date], page: params[:page]), method: :put, data: { confirm: t(".confirm_delete") }, remote: :true %>
       <% end %>
     </td>
   </tr>

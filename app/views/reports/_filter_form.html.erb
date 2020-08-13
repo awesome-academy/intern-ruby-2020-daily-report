@@ -4,13 +4,13 @@
       <p>
         <%= t ".date_created" %>
       </p>
-      <%= date_field :report, :created, class: "input-filter-report" %>
+      <%= date_field :date, "", value: params[:date], class: "input-filter-report" %>
     </div>
     <div class="col-xs-4">
       <p>
         <%= t ".status" %>
       </p>
-      <%= select_tag :status, options_for_select(Settings.select_option.filter_status), class: "input-filter-report" %>
+      <%= select_tag :status, options_for_select(Settings.select_option.filter_status, params[:status]), class: "input-filter-report" %>
     </div>
     <div class="col-xs-4 div-submit-filter-report">
       <%= submit_tag t(".search"), class: "btn btn-success" %>
