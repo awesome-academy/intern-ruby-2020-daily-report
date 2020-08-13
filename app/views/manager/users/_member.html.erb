@@ -6,6 +6,7 @@
     <%= link_to member.name, manager_user_path(member) %>
   </td>
   <td><%= member.email %></td>
+  <td><%= member.division_name %></td>
   <td>
     <%= link_to t(".remove"), manager_user_path(member, page: params[:page]), method: :put, data: { confirm: t(".confirm_remove"), remote: true } %>
   </td>

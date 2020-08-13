@@ -30,3 +30,5 @@ role:
   manager: "manager"
   member: "member"
   admin: "admin"
+limit:
+  user_searching: 5

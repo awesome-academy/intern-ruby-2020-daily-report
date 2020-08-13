@@ -1,5 +1,5 @@
 <%= provide :title, t(".title") %>
-<div class="col-md-7">
+<div class="col-md-8">
   <div class="col-xs-12 box-show" id="members-table-manager">
     <h4 class="col-md-12">
       <%= t ".member" %>
@@ -14,6 +14,7 @@
             <th><%= t ".id" %></th>
             <th><%= t ".name" %></th>
             <th><%= t ".email" %></th>
+            <th><%= t ".division" %></th>
             <th><%= t ".action" %></th>
           </tr>
         </thead>
@@ -24,8 +25,6 @@
       <%= paginate @members %>
     </div>
   </div>
-</div>
-<div class="col-md-5">
   <div class="col-xs-12 box-show">
     <h4 class="col-md-12">
       <%= t ".manager" %>
@@ -45,5 +44,10 @@
         </tbody>
       </table>
     </div>
+  </div>
+</div>
+<div class="col-md-4 box-user-searching">
+  <div class="col-xs-12 box-show">
+    <%= render "shared/search_user" %>
   </div>
 </div>

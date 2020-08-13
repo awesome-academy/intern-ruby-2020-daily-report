@@ -1,0 +1,7 @@
+<div class="col-md-12">
+  <h4><%= t ".user_searching" %></h4>
+</div>
+<div class="col-md-12">
+  <%= text_field_tag :email, "", class: "form-control", id: "input-email-searching", placeholder: t(".type_email"), autocomplete: "off" %>
+  <div class="col-md-12 user-searching-result box-show" id="user-searching-result"></div>
+</div>

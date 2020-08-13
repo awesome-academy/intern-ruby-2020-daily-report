@@ -7,33 +7,54 @@
   <ul class="list-unstyled components">
     <% if current_user.member? %>
       <li>
-        <%= link_to t(".account"), account_index_path %>
+        <%= link_to account_index_path do %>
+          <i class="fas fa-user sidebar-icon"></i>
+          <%= t ".account" %>
+        <% end %>
       </li>
       <li>
-        <%= link_to t(".report"), reports_path %>
+        <%= link_to reports_path do %>
+          <i class="fas fa-tasks sidebar-icon"></i>
+          <%= t ".report" %>
+        <% end %>
       </li>
       <li>
-        <%= link_to t(".request"), "#" %>
+        <%= link_to "#" do %>
+          <i class="fas fa-list-alt sidebar-icon"></i>
+          <%= t ".request" %>
+        <% end %>
       </li>
     <% elsif current_user.manager? %>
       <li>
-        <%= link_to t(".account"), account_index_path %>
+        <%= link_to account_index_path do %>
+          <i class="fas fa-user sidebar-icon"></i>
+          <%= t ".account" %>
+        <% end %>
       </li>
       <li>
-        <%= link_to t(".user"), manager_users_path %>
+        <%= link_to manager_users_path do %>
+          <i class="fas fa-users sidebar-icon"></i>
+          <%= t ".user" %>
+        <% end %>
       </li>
       <li>
-        <%= link_to t(".report"), manager_reports_path %>
+        <%= link_to manager_reports_path do %>
+          <i class="fas fa-tasks sidebar-icon"></i>
+          <%= t ".report" %>
+        <% end %>
       </li>
       <li>
-        <%= link_to t(".request"), "#" %>
+        <%= link_to "#" do %>
+          <i class="fas fa-list-alt sidebar-icon"></i>
+          <%= t ".request" %>
+        <% end %>
       </li>
     <% elsif current_user.admin? %>
       <li>
-        <%= link_to t(".account"), account_index_path %>
-      </li>
-      <li>
-        <%= link_to t("admin"), "#" %>
+        <%= link_to account_index_path do %>
+          <i class="fas fa-user sidebar-icon"></i>
+          <%= t ".account" %>
+        <% end %>
       </li>
     <% end %>
 

@@ -321,3 +321,37 @@ a[aria-expanded='true']::before {
 .btn-to-edit-account {
   padding-top: 20px;
 }
+
+.sidebar-icon {
+  margin-right: 5px;
+}
+
+.box-user-searching {
+  margin-bottom: 20px;
+}
+
+.user-searching-result {
+  position: absolute;
+  z-index: 2;
+  background-color: white;
+  display: none;
+}
+
+#members-table-manager {
+  margin-bottom: 20px;
+}
+
+.box-search-user-result {
+  padding: 10px 0px;
+}
+
+.link-search-user-result {
+  width: 100%;
+  color: $text-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $text-color;
+  }
+}

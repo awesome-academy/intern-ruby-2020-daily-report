@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     put "/manager/reports", to: "manager/reports#update"
 
     namespace :manager do
+      get "/users/search", to: "users#search"
       resources :reports, only: %i(index show update)
       resources :users, only: %i(index show update)
     end

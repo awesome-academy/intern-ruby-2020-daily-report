@@ -49,6 +49,9 @@ vi:
       name: "Tên"
       email: "Email"
       action: "Hành động"
+    search_user:
+      type_email: "Nhập email"
+      user_searching: "Tim kiếm thành viên"
   layouts:
     navbar:
       log_out: "Đăng xuất"
@@ -137,6 +140,8 @@ vi:
       error_division: "There are something wrong!"
       index:
         title: "Quản lý người dùng"
+        all_members: "All members"
+        user_in_division: "Users in division"
       member:
         confirm_remove: "Bạn có chắc muốn xóa thành viên khỏi nhóm?"
         remove: "Loại bỏ"
