@@ -1,0 +1,49 @@
+<%= provide :title, t(".title") %>
+<div class="col-md-7">
+  <div class="col-xs-12 box-show" id="members-table-manager">
+    <h4 class="col-md-12">
+      <%= t ".member" %>
+      <span id="total-members">
+        (<%= @members.total_count %>)
+      </span>
+    </h4>
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><%= t ".id" %></th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".email" %></th>
+            <th><%= t ".action" %></th>
+          </tr>
+        </thead>
+        <tbody id="body-members-table">
+          <%= render partial: "member", collection: @members, as: :member %>
+        </tbody>
+      </table>
+      <%= paginate @members %>
+    </div>
+  </div>
+</div>
+<div class="col-md-5">
+  <div class="col-xs-12 box-show">
+    <h4 class="col-md-12">
+      <%= t ".manager" %>
+      (<%= @managers.size %>)
+    </h4>
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><%= t ".id" %></th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".email" %></th>
+          </tr>
+        </thead>
+        <tbody id="body-report-table">
+          <%= render partial: "manager", collection: @managers, as: :manager %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

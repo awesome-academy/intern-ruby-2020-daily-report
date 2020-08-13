@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
     namespace :manager do
       resources :reports, only: %i(index show update)
+      resources :users, only: %i(index show update)
     end
 
     resources :reports, except: :destroy

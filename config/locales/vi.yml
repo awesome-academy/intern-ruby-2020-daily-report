@@ -42,6 +42,13 @@ vi:
       edit: "Chỉnh sửa tài khoản"
     account_edit:
       save: "Lưu"
+    division_user:
+      member: "Member"
+      manager: "Manager"
+      id: "Stt"
+      name: "Tên"
+      email: "Email"
+      action: "Hành động"
   layouts:
     navbar:
       log_out: "Đăng xuất"
@@ -55,6 +62,7 @@ vi:
       admin: "Admin"
       manager: "Manager"
       account: "Account"
+      user: "User"
   sessions:
     ivalid_account_notify: "Tài khỏan hoặc mật khẩu bị sai."
     login_success_notify: "Đăng nhập thành công!"
@@ -124,6 +132,20 @@ vi:
         name: "Tên"
       show:
         title: "Chi tiết"
+    users:
+      find_user_error: "Không tìm được thành viên."
+      error_division: "There are something wrong!"
+      index:
+        title: "Quản lý người dùng"
+      member:
+        confirm_remove: "Bạn có chắc muốn xóa thành viên khỏi nhóm?"
+        remove: "Loại bỏ"
+      show:
+        title: "Chi tiết"
+        remove: "Remove from division"
+        add: "Add to division"
+        confirm_remove: "Bạn có chắc muốn xóa thành viên khỏi nhóm?"
+        confirm_add: "Bạn có muốn thêm thành viên?"
   account:
     update_success: "Cập nhật tài khoản thành công!"
     update_faild: "Cập nhật tài khoản thất bại!"

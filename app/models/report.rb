@@ -18,6 +18,8 @@ class Report < ApplicationRecord
   validates :free_comment,
             length: {maximum: Settings.validates.report.max_length}
 
+  delegate :name, :email, to: :user, prefix: true
+
   scope :recent_reports, ->{order created_at: :desc}
   scope :active_reports, ->{where deleted: false}
   scope :by_ids, ->(report_ids){where id: report_ids}

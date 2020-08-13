@@ -1,9 +1,7 @@
 <div>
   <h4>
     <%= t ".all_report" %>
-    (<span id="num-reports">
-      <%= num_of_reports %>
-    </span>)
+    (<span id="num-reports"><%= reports.total_count %></span>)
   </h4>
 </div>
 <table class="table table-hover">
@@ -17,7 +15,7 @@
     </tr>
   </thead>
   <tbody id="tbody-all-report">
-    <%= render "report_table", reports: reports %>
+    <%= render partial: "report_table", collection: reports, as: :report %>
   </tbody>
 </table>
 <%= paginate reports %>

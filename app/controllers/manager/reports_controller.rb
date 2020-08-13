@@ -1,8 +1,7 @@
 class Manager::ReportsController < ApplicationController
-  before_action :require_login
+  before_action :require_login, -> {check_role? :manager}
   before_action :paginate_reports, only: %i(index update)
   before_action :find_report, only: :show
-  before_action{check_role? :manager}
 
   def index; end
 

@@ -1,17 +1,15 @@
-<% reports.each.with_index(1) do |report, index| %>
-  <tr>
-    <td>
-      <%= item_id index, params[:page] %>
-    </td>
-    <td><%= report.created_at.strftime Settings.date.validate %></td>
-    <td><%= report.updated_at.strftime Settings.date.validate %></td>
-    <td><%= report.status %></td>
-    <td>
-      <%= link_to t("detail"), report_path(report.id) %>
-      |
-      <% if report.waiting? %>
-        <%= link_to t(".delete"), report_path(report, status: params[:status], date: params[:date], page: params[:page]), method: :put, data: { confirm: t(".confirm_delete") }, remote: :true %>
-      <% end %>
-    </td>
-  </tr>
-<% end %>
+<tr>
+  <td>
+    <%= item_id report_counter, params[:page] %>
+  </td>
+  <td><%= report.created_at.strftime Settings.date.validate %></td>
+  <td><%= report.updated_at.strftime Settings.date.validate %></td>
+  <td><%= report.status %></td>
+  <td>
+    <%= link_to t("detail"), report_path(report.id) %>
+    |
+    <% if report.waiting? %>
+      <%= link_to t(".delete"), report_path(report, status: params[:status], date: params[:date], page: params[:page]), method: :put, data: { confirm: t(".confirm_delete") }, remote: :true %>
+    <% end %>
+  </td>
+</tr>

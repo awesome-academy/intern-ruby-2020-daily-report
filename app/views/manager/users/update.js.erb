@@ -1,0 +1,4 @@
+$("#body-members-table").html(
+  "<%= j (render partial: "member", collection: @members, as: :member) %>"
+);
+$("#total-members").html("(<%= @members.total_count %>)");

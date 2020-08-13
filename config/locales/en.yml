@@ -42,6 +42,13 @@ en:
       edit: "Edit account"
     account_edit:
       save: "Save"
+    division_user:
+      member: "Member"
+      manager: "Manager"
+      id: "Id"
+      name: "Name"
+      email: "Email"
+      action: "Action"
   layouts:
     navbar:
       log_out: "Log out"
@@ -50,11 +57,12 @@ en:
       logo: "DAILY REPORT"
       home: "Home"
       division: "Your division"
-      request: "Request"
-      report: "Report"
+      request: "Requests"
+      report: "Reports"
       admin: "Admin"
       manager: "Manager"
       account: "Account"
+      user: "Users"
   sessions:
     ivalid_account_notify: "Invalid password or account combination"
     login_success_notify: "Log in successed!"
@@ -124,6 +132,20 @@ en:
         name: "Name"
       show:
         title: "Report detail"
+    users:
+      find_user_error: "Can not find user."
+      error_division: "There are something wrong!"
+      index:
+        title: "Users management"
+      member:
+        confirm_remove: "Are you sure want to remove user?"
+        remove: "Remove"
+      show:
+        title: "Report detail"
+        remove: "Remove from division"
+        add: "Add to division"
+        confirm_remove: "Are you sure want to remove user?"
+        confirm_add: "Are you sure want to add user to division?"
   account:
     update_success: "Account update successed!"
     update_faild: "Account update failed!"
