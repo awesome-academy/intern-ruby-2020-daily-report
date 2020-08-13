@@ -1,4 +1,6 @@
 vi:
+  js:
+    error_comment: "Không thể bình luận. Nội dung quá dài (tối đa 500 ký tự)"
   home:
     index:
       title: "Daily report"
@@ -20,6 +22,21 @@ vi:
     error_messages:
       message_error: "Có "
       error: "lỗi"
+    report_detail:
+      name: "Tên:"
+      email: "Email:"
+      today_plan: "Kế hoạch ngày hôm nay"
+      actual: "Thực tế"
+      reason_not_complete: "Lý do chưa hoàn thành"
+      tomorrow_plan: "Kế hoạch ngày mai"
+      free_comment: "Bổ sung"
+      status: "Trạng thái"
+      date_created: "Ngày tạo"
+    report_comments:
+      comment: "Bình luận"
+    comment_form:
+      comment: "Bình luận"
+      placeholder_input_comment: "Nhập bình luận"
   layouts:
     navbar:
       log_out: "Đăng xuất"
@@ -98,6 +115,10 @@ vi:
         filter: "Filter"
         email: "Email"
         name: "Tên"
+      show:
+        title: "Chi tiết"
   account:
     index:
       title: "Thông tin tài khoản"
+  comments:
+    can_not_comment: "Thất bại!"

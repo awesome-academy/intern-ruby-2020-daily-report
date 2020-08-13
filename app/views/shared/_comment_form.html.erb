@@ -1,0 +1,9 @@
+<%= form_tag comments_path, remote: true do %>
+  <div class="col-xs-12 form-group">
+    <%= text_area_tag :content, "", class: "input-field-comment form-control", id: "input-comment", placeholder: t(".placeholder_input_comment") %>
+  </div>
+  <%= hidden_field_tag :report_id, params[:id] %>
+  <div class="col-xs-12">
+    <%= submit_tag t(".comment"), class: "btn btn-primary btn-submit-comment pull-right", id: "btn-submit-comment", disabled: true %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<div class="col-xs-12">
+  <h3>
+    <%= t ".comment" %>
+  </h3>
+</div>
+<div class="col-xs-12">
+  <%= render "shared/comment_form", report: report %>
+</div>
+<div class="col-xs-12" id="all-comments">
+  <%= render partial: "shared/report_comment", collection: comments, as: :comment %>
+</div>

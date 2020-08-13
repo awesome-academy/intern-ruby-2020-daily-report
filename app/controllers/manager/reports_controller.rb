@@ -1,7 +1,8 @@
 class Manager::ReportsController < ApplicationController
   before_action :require_login
   before_action :paginate_reports, only: %i(index update)
-  before_action {check_role? :manager}
+  before_action :find_report, only: :show
+  before_action{check_role? :manager}
 
   def index; end
 
@@ -12,6 +13,12 @@ class Manager::ReportsController < ApplicationController
       format.html{redirect_to manager_reports_path}
       format.js
     end
+  end
+
+  def show
+    @user = @report.user
+    @comments = Comment.by_report_id(params[:id])
+                       .order_by_created_at
   end
 
   private
@@ -32,5 +39,13 @@ class Manager::ReportsController < ApplicationController
     User.by_division_id(current_user.division_id)
         .like_email(params[:email])
         .like_name(params[:name])
+  end
+
+  def find_report
+    @report = Report.find_by id: params[:id]
+    return if @report
+
+    flash[:danger] = t ".find_report_error"
+    redirect_to reports_path
   end
 end

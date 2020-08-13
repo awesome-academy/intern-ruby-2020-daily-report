@@ -1,21 +1,23 @@
 <%= provide :title, t(".daily_report") %>
 <div class="div-all-report">
-  <h2 class="title-center report-title">
+  <h2 class="title-center report-title box-show">
     <%= t ".daily_report" %>
   </h2>
-  <div class="div-create-btn">
-    <% if current_user.division_id.eql? Settings.division.default %>
-      <button type="button" class="btn btn-info">
-        <%= link_to t(".create"), new_report_path %>
-      </button>
+  <div class="box-show">
+    <div class="div-create-btn">
+      <% unless current_user.division_id.eql? Settings.division.default %>
+        <button type="button" class="btn btn-info">
+          <%= link_to t(".create"), new_report_path %>
+        </button>
+      <% end %>
+    </div>
+    <% if current_user.reports.any? %>
+      <div class="div-report-filter">
+        <%= render "filter_form" %>
+      </div>
+      <div id="all-report">
+        <%= render "all_report", reports: @reports, num_of_reports: @num_of_reports %>
+      </div>
     <% end %>
   </div>
-  <% if current_user.reports.any? %>
-    <div class="div-report-filter">
-      <%= render "filter_form" %>
-    </div>
-    <div id="all-report">
-      <%= render "all_report", reports: @reports, num_of_reports: @num_of_reports %>
-    </div>
-  <% end %>
 </div>

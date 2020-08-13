@@ -17,7 +17,7 @@
       <%= report.status %>
     </td>
     <td>
-      <%= t ".detail" %>
+      <%= link_to t(".detail"), manager_report_path(report.id) %>
     </td>
   </tr>
 <% end %>

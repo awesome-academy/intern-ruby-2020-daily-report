@@ -3,7 +3,7 @@ class ReportsController < ApplicationController
   before_action :paginate_reports, only: %i(index update)
   before_action :find_report, only: :update
   before_action :belong_to_division?, only: %i(new create)
-  before_action {check_role? :member}
+  before_action{check_role? :member}
 
   def index; end
 

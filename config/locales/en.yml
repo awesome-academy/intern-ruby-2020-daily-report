@@ -1,4 +1,6 @@
 en:
+  js:
+    error_comment: "Can not comment! The content is too long (maximum 500 characters)"
   home:
     index:
       title: "Daily report"
@@ -20,6 +22,21 @@ en:
     error_messages:
       message_error: "The form contains"
       error: "error"
+    report_detail:
+      name: "Name:"
+      email: "Email:"
+      today_plan: "Today plan"
+      actual: "Actual"
+      reason_not_complete: "Reason not complete"
+      tomorrow_plan: "Tomorrow plan"
+      free_comment: "Free comment"
+      status: "Status"
+      date_created: "Date created"
+    report_comments:
+      comment: "Comments"
+    comment_form:
+      comment: "Comment"
+      placeholder_input_comment: "Type your comment"
   layouts:
     navbar:
       log_out: "Log out"
@@ -98,6 +115,10 @@ en:
         filter: "Filter"
         email: "Email"
         name: "Name"
+      show:
+        title: "Report detail"
   account:
     index:
       title: "Your account"
+  comments:
+    can_not_comment: "Faild!"

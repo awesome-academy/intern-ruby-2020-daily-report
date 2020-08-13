@@ -5,3 +5,4 @@ require('channels')
 require('jquery')
 import 'bootstrap'
 import './sidebar'
+import './comments'
