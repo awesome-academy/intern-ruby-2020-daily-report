@@ -8,3 +8,7 @@ validates:
     max_length: 500
 form:
   num_row: 4
+paginate:
+  items_per_page: 10
+select_option:
+  filter_status: [["All", ""], ["Waitting", "0"], ["Checked", "1"]]

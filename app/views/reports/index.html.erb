@@ -1,0 +1,19 @@
+<%= provide :title, t(".daily_report") %>
+<div class="div-all-report">
+  <h2 class="title-center report-title">
+    <%= t ".daily_report" %>
+  </h2>
+  <div class="div-create-btn">
+    <button type="button" class="btn btn-info">
+      <%= link_to t(".create"), new_report_path %>
+    </button>
+  </div>
+  <div class="div-report-filter">
+    <%= render "filter_form" %>
+  </div>
+  <% if current_user.reports.any? %>
+    <div id="all-report">
+      <%= render "all_report", reports: @reports, page: @page, all_reports: @all_reports%>
+    </div>
+  <% end %>
+</div>

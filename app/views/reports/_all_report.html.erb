@@ -1,0 +1,23 @@
+<div>
+  <h4>
+    <%= t ".all_report" %>
+    (<span id="num-reports">
+      <%= all_reports.size %>
+    </span>)
+  </h4>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= t ".id" %></th>
+      <th><%= t ".create_at" %></th>
+      <th><%= t ".update_at" %></th>
+      <th><%= t ".status" %></th>
+      <th><%= t ".action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render "report_table", reports: reports, page: page %>
+  </tbody>
+</table>
+<%= paginate reports %>

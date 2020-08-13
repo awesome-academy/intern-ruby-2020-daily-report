@@ -45,11 +45,30 @@ en:
   reports:
     create_success_notify: "Created success! Report was sent to your manager."
     create_failed_notify: "Failed! Can not create report."
-    show:
+    delete_report_failed: "Can not delete this report!"
+    delete_report_success: "Deleted success!"
+    find_report_error: "Can not find report!"
+    index:
       daily_report: "Daily report"
       create: "Create"
+    all_report:
+      all_report: "All report"
+      id: "Id"
+      create_at: "Created at"
+      update_at: "Updated at"
+      status: "Status"
+      action: "Action"
+    report_table:
+      delete: "Delete"
+      edit: "Edit"
+      confirm_delete: "Are you sure?"
+      detail: "Detail"
     new:
       create_report: "Create daily report"
       today: "Today:"
     create_form:
       create: "Create"
+    filter_form:
+      search: "Filter"
+      date_created: "Date created"
+      status: "Status"
