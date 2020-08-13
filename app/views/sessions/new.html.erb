@@ -1,0 +1,22 @@
+<% provide :title, t(".title") %>
+<div class="signup-form">
+  <h2>
+    <%= t ".title" %>
+  </h2>
+  <p class="hint-text">
+    <%= t ".welcome_login" %>
+  </p>
+  <%= form_for :session, url: login_path do |f| %>
+    <div class="form-group">
+      <%= f.email_field :email, class: "form-control", placeholder: t(".email") %>
+    </div>
+    <div class="form-group">
+      <%= f.password_field :password, class: "form-control", placeholder: t(".password") %>
+    </div>
+    <%= f.submit t(".title"), class: "btn btn-success btn-lg btn-block" %>
+  <% end %>
+  <div class="text-center">
+    <%= t ".answer_account" %>
+    <%= link_to t(".sign_up"), signup_path %>
+  </div>
+</div>

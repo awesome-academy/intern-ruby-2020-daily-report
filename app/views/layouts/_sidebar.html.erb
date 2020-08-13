@@ -1,0 +1,20 @@
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <h3 id="logo">
+      <%= link_to t(".logo"), root_path %>
+    </h3>
+  </div>
+  <ul class="list-unstyled components">
+    <li class="active">
+      <%= link_to t(".link_1"), "#homeSubmenu", "data-toggle" => "collapse", "aria-expanded" => "false" %>
+      <ul class="collapse list-unstyled" id="homeSubmenu">
+        <li>
+          <%= link_to t(".link_2"), "#" %>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <%= link_to t(".link_3"), "#" %>
+    </li>
+  </ul>
+</nav>
