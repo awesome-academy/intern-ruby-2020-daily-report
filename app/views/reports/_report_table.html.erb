@@ -9,7 +9,9 @@
     <%= link_to t("detail"), report_path(report.id) %>
     |
     <% if report.waiting? %>
-      <%= link_to t(".delete"), report_path(report, status: params[:status], date: params[:date], page: params[:page]), method: :put, data: { confirm: t(".confirm_delete") }, remote: :true %>
+      <%= link_to t(".delete"), report_path(report, status: params[:status], date: params[:date], page: params[:page]), method: :delete, data: { confirm: t(".confirm_delete") }, remote: :true %>
+      |
+      <%= link_to t(".edit"), edit_report_path(report) %>
     <% end %>
   </td>
 </tr>
