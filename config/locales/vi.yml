@@ -91,6 +91,8 @@ vi:
       search: "Lọc"
       date_created: "Ngày tạo"
       status: "Trạng thái"
+    show:
+      title: "Chi tiết"
   manager:
     reports:
       index:
