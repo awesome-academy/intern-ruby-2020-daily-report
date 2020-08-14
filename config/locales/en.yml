@@ -26,9 +26,12 @@ en:
       toggle_sidebar: "Toggle Sidebar"
     sidebar:
       logo: "DAILY REPORT"
-      link_1: "Home"
-      link_2: "Home 1"
-      link_3: "User"
+      home: "Home"
+      division: "Your division"
+      request: "Request"
+      report: "Report"
+      admin: "Admin"
+      manager: "Manager"
   sessions:
     ivalid_account_notify: "Invalid password or account combination"
     login_success_notify: "Log in successed!"
@@ -39,3 +42,14 @@ en:
       welcome_login: "Log in to your accout"
       answer_account: "You don't have an account?"
       sign_up: "Sign up"
+  reports:
+    create_success_notify: "Created success! Report was sent to your manager."
+    create_failed_notify: "Failed! Can not create report."
+    show:
+      daily_report: "Daily report"
+      create: "Create"
+    new:
+      create_report: "Create daily report"
+      today: "Today:"
+    create_form:
+      create: "Create"

@@ -22,14 +22,17 @@ vi:
       error: "lỗi"
   layouts:
     navbar:
-      log_out: "Log out"
+      log_out: "Đăng xuất"
       toggle_sidebar: "Toggle Sidebar"
     sidebar:
       logo: "DAILY REPORT"
-      link_1: "Home"
-      link_2: "Home 1"
-      link_3: "User"
-  essions:
+      home: "Home"
+      division: "Your division"
+      request: "Request"
+      report: "Report"
+      admin: "Admin"
+      manager: "Manager"
+  sessions:
     ivalid_account_notify: "Tài khỏan hoặc mật khẩu bị sai."
     login_success_notify: "Đăng nhập thành công!"
     new:
@@ -39,3 +42,14 @@ vi:
       welcome_login: "Đăng nhập vào tài khoản của bạn"
       answer_account: "Bạn chưa có tài khoản?"
       sign_up: "Đăng ký"
+  reports:
+    create_success_notify: "Tạo thành công! Report đã được gửi đến manager."
+    create_failed_notify: "Thất bại! Không thể tạo report"
+    show:
+      daily_report: "Daily report"
+      create: "Create"
+    new:
+      create_report: "Tạo daily report"
+      today: "Ngày:"
+    create_form:
+      create: "Tạo mới"

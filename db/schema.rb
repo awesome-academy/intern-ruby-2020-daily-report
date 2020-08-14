@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_12_041117) do
+ActiveRecord::Schema.define(version: 2020_08_14_063643) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci", force: :cascade do |t|
     t.bigint "report_id", null: false
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2020_08_12_041117) do
     t.text "free_comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", default: 0
+    t.boolean "deleted", default: false
     t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
@@ -66,7 +68,7 @@ ActiveRecord::Schema.define(version: 2020_08_12_041117) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.integer "role", default: 1
+    t.integer "role", default: 0
     t.bigint "division_id", default: 1, null: false
     t.string "password_digest"
     t.boolean "activated", default: false
