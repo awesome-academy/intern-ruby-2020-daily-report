@@ -95,7 +95,6 @@ p {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.7em;
-  color: $text-color;
 }
 
 #sidebar a{
@@ -217,4 +216,30 @@ a[aria-expanded='true']::before {
 
 .require-field {
   color: red;
+}
+
+.div-create-btn {
+  padding: 20px 15px;
+
+  button a {
+    color: white;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.div-report-filter {
+  padding: 30px 0px;
+}
+
+.input-filter-report {
+  width: 100%;
+  padding: 10px;
+  height: 42px;
+}
+
+.div-submit-filter-report {
+  margin-top: 45px;
 }

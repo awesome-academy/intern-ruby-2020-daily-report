@@ -44,12 +44,31 @@ vi:
       sign_up: "Đăng ký"
   reports:
     create_success_notify: "Tạo thành công! Report đã được gửi đến manager."
-    create_failed_notify: "Thất bại! Không thể tạo report"
-    show:
+    create_failed_notify: "Thất bại! Không thể tạo report."
+    delete_report_failed: "Thất bại! Không thể xóa report."
+    delete_report_success: "Xóa thành công!"
+    find_report_error: "Không thể tìm report!"
+    index:
       daily_report: "Daily report"
       create: "Create"
+    all_report:
+      all_report: "Tất cả report"
+      id: "Stt"
+      create_at: "Ngày tạo"
+      update_at: "Ngày cập nhật"
+      status: "Trạng thái"
+      action: "Hành động"
+    report_table:
+      delete: "Xóa"
+      edit: "Sửa"
+      confirm_delete: "Bạn có muốn xóa không?"
+      detail: "Chi tiết"
     new:
       create_report: "Tạo daily report"
       today: "Ngày:"
     create_form:
       create: "Tạo mới"
+    filter_form:
+      search: "Lọc"
+      date_created: "Ngày tạo"
+      status: "Trạng thái"
