@@ -32,6 +32,7 @@ en:
       report: "Report"
       admin: "Admin"
       manager: "Manager"
+      account: "Account"
   sessions:
     ivalid_account_notify: "Invalid password or account combination"
     login_success_notify: "Log in successed!"
@@ -51,6 +52,7 @@ en:
     index:
       daily_report: "Daily report"
       create: "Create"
+      belong_division_notify: "You do not belong to any division."
     all_report:
       all_report: "All report"
       id: "Id"
@@ -72,3 +74,30 @@ en:
       search: "Filter"
       date_created: "Date created"
       status: "Status"
+  manager:
+    reports:
+      index:
+        title: "All report"
+        all_report: "All reports in "
+      all_reports:
+        all_report: "All reports"
+        id: "Id"
+        name: "Name"
+        emai: "Email"
+        date_created: "Date created"
+        status: "Status"
+        action: "Action"
+        checked: "Checked"
+        select: "Select"
+        show_all: "Show all"
+      report_table:
+        detail: "Detail"
+        waiting: "Waiting"
+        checked: "Checked"
+      filter_form:
+        filter: "Filter"
+        email: "Email"
+        name: "Name"
+  account:
+    index:
+      title: "Your account"

@@ -12,3 +12,9 @@ paginate:
   items_per_page: 10
 select_option:
   filter_status: [["All", ""], ["Waitting", "0"], ["Checked", "1"]]
+date:
+  validate: "%d-%m-%Y %H:%M"
+division:
+  default: 1
+time:
+  timezone: "Asia/Ho_Chi_Minh"

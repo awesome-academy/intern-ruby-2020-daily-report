@@ -1,3 +1,4 @@
-$("#all-report").html(
-  "<%= j (render("reports/all_report", reports: @reports, page: @page, all_reports: @all_reports)) %>"
+$("#tbody-all-report").html(
+  "<%= j (render("report_table", reports: @reports)) %>"
 );
+$("#num-reports").html("<%= @num_of_reports %>");

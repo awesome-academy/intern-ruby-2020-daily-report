@@ -7,7 +7,7 @@
   <ul class="list-unstyled components">
     <% if current_user.member? %>
       <li>
-        <%= link_to t(".home"), "#" %>
+        <%= link_to t(".account"), account_index_path %>
       </li>
       <li>
         <%= link_to t(".division"), "#" %>
@@ -20,9 +20,21 @@
       </li>
     <% elsif current_user.manager? %>
       <li>
-        <%= link_to t(".manager"), "#" %>
+        <%= link_to t(".account"), account_index_path %>
+      </li>
+      <li>
+        <%= link_to t(".division"), "#" %>
+      </li>
+      <li>
+        <%= link_to t(".report"), manager_reports_path %>
+      </li>
+      <li>
+        <%= link_to t(".request"), "#" %>
       </li>
     <% elsif current_user.admin? %>
+      <li>
+        <%= link_to t(".account"), account_index_path %>
+      </li>
       <li>
         <%= link_to t("admin"), "#" %>
       </li>

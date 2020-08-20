@@ -22,6 +22,16 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+  scope :by_division_id, (lambda do |division_id|
+    where(division_id: division_id)
+  end)
+  scope :like_email, (lambda do |email|
+    where("email like :email", email: "%#{email}%") if email.present?
+  end)
+  scope :like_name, (lambda do |name|
+    where("name like :name", name: "%#{name}%") if name.present?
+  end)
+
   private
 
   def downcase_email
