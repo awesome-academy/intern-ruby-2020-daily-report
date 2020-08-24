@@ -37,6 +37,8 @@ en:
     comment_form:
       comment: "Comment"
       placeholder_input_comment: "Type your comment"
+    account_info:
+      edit: "Edit account"
   layouts:
     navbar:
       log_out: "Log out"
@@ -122,5 +124,10 @@ en:
   account:
     index:
       title: "Your account"
+      name: "Name"
+      email: "Email"
+      role: "Role"
+      division: "Division"
+      header: "Personal information"
   comments:
     can_not_comment: "Faild!"

@@ -37,6 +37,8 @@ vi:
     comment_form:
       comment: "Bình luận"
       placeholder_input_comment: "Nhập bình luận"
+    account_info:
+      edit: "Chỉnh sửa tài khoản"
   layouts:
     navbar:
       log_out: "Đăng xuất"
@@ -122,5 +124,10 @@ vi:
   account:
     index:
       title: "Thông tin tài khoản"
+      name: "Tên"
+      email: "Email"
+      role: "Vị trí"
+      division: "Phòng ban"
+      header: "Thông tin cá nhân"
   comments:
     can_not_comment: "Thất bại!"

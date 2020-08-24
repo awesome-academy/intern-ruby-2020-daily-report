@@ -262,7 +262,7 @@ a[aria-expanded='true']::before {
   }
 }
 
-.report-detail {
+.report-detail, .box-account-info {
   margin-bottom: 30px;
 
   p, span {
@@ -272,6 +272,10 @@ a[aria-expanded='true']::before {
   .box-info {
     padding: 25px 0px 3px 0px;
     border-bottom: 1px solid rgba(4,9,20,0.05);
+
+    &:first-child {
+      padding-top: 0px;
+    }
   }
 }
 
@@ -298,4 +302,18 @@ a[aria-expanded='true']::before {
 
 .padding-0 {
   padding: 0px;
+}
+
+.box-account-info {
+  margin-top: 20px;
+}
+
+.circle-avatar-small {
+  width: 65px;
+  height: 65px;
+}
+
+.circle-avatar-bigger {
+  width: 140px;
+  height: 110px;
 }
