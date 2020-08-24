@@ -7,6 +7,7 @@ en:
   users:
     signup_faild_notify: "Sign up failed!"
     signup_success_notify: "Sign up successed!"
+    avatar_type_validate: "Must be a valid image format"
     new:
       title: "Sign up"
       answer_account: "Already have an account?"
@@ -39,6 +40,8 @@ en:
       placeholder_input_comment: "Type your comment"
     account_info:
       edit: "Edit account"
+    account_edit:
+      save: "Save"
   layouts:
     navbar:
       log_out: "Log out"
@@ -122,6 +125,8 @@ en:
       show:
         title: "Report detail"
   account:
+    update_success: "Account update successed!"
+    update_faild: "Account update failed!"
     index:
       title: "Your account"
       name: "Name"
@@ -129,5 +134,13 @@ en:
       role: "Role"
       division: "Division"
       header: "Personal information"
+      edit: "Edit account"
+    edit:
+      title: "Edit personal information"
+      header: "Edit personal information"
+      name: "Name"
+      email: "Email"
+      role: "Role"
+      division: "Division"
   comments:
     can_not_comment: "Faild!"

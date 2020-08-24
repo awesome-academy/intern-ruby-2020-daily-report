@@ -1,5 +1,9 @@
 <div class="col-md-4">
-  <%= image_tag Settings.image.default_avatar, class: "img-thumbnail" %>
+  <% if user.avatar.attached? %>
+    <%= image_tag user.avatar, class: "img-thumbnail" %>
+  <% else %>
+    <%= image_tag Settings.image.default_avatar, class: "img-thumbnail" %>
+  <% end %>
 </div>
 <div class="col-md-8 ">
   <div class="col-md-12 box-info">

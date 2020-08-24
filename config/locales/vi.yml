@@ -7,6 +7,7 @@ vi:
   users:
     signup_faild_notify: "Đăng ký thất bại!"
     signup_success_notify: "Đăng ký thành công!"
+    avatar_type_validate: "Bạn phải chọn một hình ảnh."
     new:
       title: "Đăng ký"
       answer_account: "Bạn đã có tài khoản?"
@@ -39,6 +40,8 @@ vi:
       placeholder_input_comment: "Nhập bình luận"
     account_info:
       edit: "Chỉnh sửa tài khoản"
+    account_edit:
+      save: "Lưu"
   layouts:
     navbar:
       log_out: "Đăng xuất"
@@ -122,6 +125,8 @@ vi:
       show:
         title: "Chi tiết"
   account:
+    update_success: "Cập nhật tài khoản thành công!"
+    update_faild: "Cập nhật tài khoản thất bại!"
     index:
       title: "Thông tin tài khoản"
       name: "Tên"
@@ -129,5 +134,13 @@ vi:
       role: "Vị trí"
       division: "Phòng ban"
       header: "Thông tin cá nhân"
+      edit: "Edit account"
+    edit:
+      title: "Chỉnh sửa thông tin cá nhân"
+      header: "Chỉnh sửa thông tin cá nhân"
+      name: "Tên"
+      email: "Email"
+      role: "Vị trí"
+      division: "Phòng ban"
   comments:
     can_not_comment: "Thất bại!"

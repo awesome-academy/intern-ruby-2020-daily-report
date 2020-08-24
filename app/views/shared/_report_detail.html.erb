@@ -1,59 +1,45 @@
 <div class="user-info report-detail col-md-12">
-  <%= image_tag Settings.image.default_avatar, class: "img-circle col-md-2 circle-avatar-bigger" %>
+  <% if user.avatar.attached? %>
+    <%= image_tag user.avatar, class: "img-circle col-md-2 circle-avatar-bigger" %>
+  <% else %>
+    <%= image_tag Settings.image.default_avatar, class: "img-circle col-md-2 circle-avatar-bigger" %>
+  <% end %>
   <div class="col-md-10">
     <div class="col-md-12 box-info">
-      <span>
-        <%= t ".name" %>
-      </span>
+      <span><%= t ".name" %></span>
       <%= user.name %>
     </div>
     <div class="col-md-12 box-info">
-      <span>
-        <%= t ".email" %>
-      </span>
+      <span><%= t ".email" %></span>
       <%= user.email %>
     </div>
   </div>
 </div>
 <div class="report-detail col-md-12">
   <div class="col-md-12 box-info">
-    <p>
-      <%= t ".today_plan" %>
-    </p>
+    <p><%= t ".today_plan" %></p>
     <%= report.today_plan %>
   </div>
   <div class="col-md-12 box-info">
-    <p>
-      <%= t ".actual" %>
-    </p>
+    <p><%= t ".actual" %></p>
     <%= report.actual %>
   </div><div class="col-md-12 box-info">
-    <p>
-      <%= t ".reason_not_complete" %>
-    </p>
+    <p><%= t ".reason_not_complete" %></p>
     <%= report.reason_not_complete %>
   </div><div class="col-md-12 box-info">
-    <p>
-      <%= t ".tomorrow_plan" %>
-    </p>
+    <p><%= t ".tomorrow_plan" %></p>
     <%= report.tomorrow_plan %>
   </div>
   <div class="col-md-12 box-info">
-    <p>
-      <%= t ".free_comment" %>
-    </p>
+    <p><%= t ".free_comment" %></p>
     <%= report.free_comment %>
   </div>
   <div class="col-md-12 box-info">
-    <p>
-      <%= t ".date_created" %>
-    </p>
+    <p><%= t ".date_created" %></p>
     <%= report.created_at.strftime Settings.date.validate %>
   </div>
   <div class="col-md-12 box-info">
-    <p>
-      <%= t ".status" %>
-    </p>
+    <p><%= t ".status" %></p>
     <%= report.status %>
   </div>
 </div>

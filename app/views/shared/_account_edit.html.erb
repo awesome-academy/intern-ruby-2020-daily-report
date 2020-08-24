@@ -1,0 +1,33 @@
+<%= form_tag account_path(current_user), method: :put, multipart: true do %>
+  <div class="col-md-4">
+    <div id="box-avatar-edit">
+      <% if user.avatar.attached? %>
+        <%= image_tag user.avatar, class: "img-thumbnail", id: "avatar-img" %>
+      <% else %>
+        <%= image_tag Settings.image.default_avatar, class: "img-thumbnail", id: "avatar-img" %>
+      <% end %>
+    </div>
+    <%= file_field_tag :avatar, accept: Settings.validates.user.avatar_type, id: "input-avatar" %>
+  </div>
+  <div class="col-md-8">
+      <div class="form-group">
+        <%= label_tag :name %>
+        <%= text_field_tag :name, user.name, class: "form-control", id: "edit-name-account" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :email %>
+        <%= email_field_tag :email, user.email, class: "form-control", id: "edit-email-account" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :division %>
+        <%= text_field_tag :division, user.role, class: "form-control", disabled: true %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :role %>
+        <%= text_field_tag :role, division.division_name, class: "form-control", disabled: true %>
+      </div>
+      <div class="form-group">
+        <%= submit_tag t(".save"), class: "btn btn-info", id: "btn-submit-edit-account", disabled: true %>
+      </div>
+  </div>
+<% end %>

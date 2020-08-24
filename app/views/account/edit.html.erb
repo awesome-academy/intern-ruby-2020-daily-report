@@ -1,0 +1,7 @@
+<%= provide :title, @user.name %>
+<h2 class="title-center col-md-12 box-show">
+  <%= t ".header" %>
+</h2>
+<div class="col-md-9 box-show box-account-info">
+  <%= render "shared/account_edit", user: @user, division: @division %>
+</div>

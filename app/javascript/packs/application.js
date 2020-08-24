@@ -6,3 +6,4 @@ require('jquery')
 import 'bootstrap'
 import './sidebar'
 import './comments'
+import './edit_account'
