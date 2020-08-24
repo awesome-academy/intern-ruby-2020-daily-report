@@ -1,0 +1,8 @@
+<% if @error %>
+  alert(I18n.t("js.error_comment"));
+<% else %>
+  $("#all-comments").prepend(
+    "<%= j (render("shared/report_comment", comment: @comment)) %>"
+  );
+  $("#input-comment").val("");
+<% end %>

@@ -10,10 +10,11 @@ Rails.application.routes.draw do
     put "/manager/reports", to: "manager/reports#update"
 
     namespace :manager do
-      resources :reports
+      resources :reports, only: %i(index show update)
     end
 
     resources :reports, except: %i(show destroy)
     resources :account, only: %i(index edit)
+    resources :comments, only: :create
   end
 end

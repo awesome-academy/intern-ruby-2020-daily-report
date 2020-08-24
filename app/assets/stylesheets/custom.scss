@@ -243,3 +243,59 @@ a[aria-expanded='true']::before {
 .div-submit-filter-report {
   margin-top: 45px;
 }
+
+.box-show {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,0.03), 0 0.9375rem 1.40625rem rgba(4,9,20,0.03), 0 0.25rem 0.53125rem rgba(4,9,20,0.05), 0 0.125rem 0.1875rem rgba(4,9,20,0.03);
+  background-color: white;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.box-user-info {
+  span {
+    font-weight: bold;
+  }
+
+  .box-info {
+    padding: 25px 0px 3px 0px;
+    border-bottom: 1px solid rgba(4,9,20,0.05);
+  }
+}
+
+.report-detail {
+  margin-bottom: 30px;
+
+  p, span {
+    font-weight: bold;
+  }
+
+  .box-info {
+    padding: 25px 0px 3px 0px;
+    border-bottom: 1px solid rgba(4,9,20,0.05);
+  }
+}
+
+.report-detail-box {
+  padding: 20px 0px;
+}
+
+.box-comments {
+  border-top: 1.5px solid gray;
+}
+
+.user-info {
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+.input-field-comment {
+  width: 100%;
+}
+
+.input-field-comment {
+  overflow: hidden;
+}
+
+.padding-0 {
+  padding: 0px;
+}

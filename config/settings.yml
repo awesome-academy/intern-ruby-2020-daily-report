@@ -6,8 +6,11 @@ validates:
     validate_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   report:
     max_length: 500
+  comment:
+    max_length: 500
 form:
   num_row: 4
+  num_row_comment: 5
 paginate:
   items_per_page: 10
 select_option:
@@ -18,3 +21,5 @@ division:
   default: 1
 time:
   timezone: "Asia/Ho_Chi_Minh"
+image:
+  default_avatar: "default-avatar.jpg"
