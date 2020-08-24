@@ -1,7 +1,7 @@
 class ReportsController < ApplicationController
   before_action :require_login
   before_action :paginate_reports, only: %i(index update)
-  before_action :find_report, only: :update
+  before_action :find_report, only: %i(update show)
   before_action :belong_to_division?, only: %i(new create)
   before_action{check_role? :member}
 
@@ -21,6 +21,12 @@ class ReportsController < ApplicationController
       flash.now[:danger] = t ".create_failed_notify"
       render :new
     end
+  end
+
+  def show
+    @user = @report.user
+    @comments = Comment.by_report_id(params[:id])
+                       .order_by_created_at
   end
 
   def update

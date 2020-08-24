@@ -91,6 +91,8 @@ en:
       search: "Filter"
       date_created: "Date created"
       status: "Status"
+    show:
+      title: "Report detail"
   manager:
     reports:
       index:
