@@ -23,6 +23,8 @@ class User < ApplicationRecord
             content_type: {in: Settings.validates.user.avatar_type.split,
                            message: I18n.t("users.avatar_type_validate")}
 
+  delegate :division_name, to: :division
+
   has_secure_password
 
   before_save :downcase_email

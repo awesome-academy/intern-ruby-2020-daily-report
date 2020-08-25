@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
-  before_action :require_login, -> {check_role? :member}
+  before_action :require_login, ->{check_role? :member}
   before_action :paginate_reports, only: %i(index update)
   before_action :find_report, only: %i(update show)
   before_action :belong_to_division?, only: %i(new create)

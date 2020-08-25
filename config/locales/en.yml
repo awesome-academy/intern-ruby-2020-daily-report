@@ -49,6 +49,9 @@ en:
       name: "Name"
       email: "Email"
       action: "Action"
+    search_user:
+      type_email: "Type email here"
+      user_searching: "User searching"
   layouts:
     navbar:
       log_out: "Log out"
@@ -137,6 +140,8 @@ en:
       error_division: "There are something wrong!"
       index:
         title: "Users management"
+        all_members: "All members"
+        user_in_division: "Members in division"
       member:
         confirm_remove: "Are you sure want to remove user?"
         remove: "Remove"

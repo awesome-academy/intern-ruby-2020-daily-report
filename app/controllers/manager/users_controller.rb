@@ -1,5 +1,5 @@
 class Manager::UsersController < ApplicationController
-  before_action :require_login, -> {check_role? :manager}
+  before_action :require_login, ->{check_role? :manager}
   before_action :find_user, only: %i(show update)
   before_action :paginate_members, only: %i(index update)
 
@@ -23,6 +23,15 @@ class Manager::UsersController < ApplicationController
         format.html{redirect_to manager_users_path}
         format.js
       end
+    end
+  end
+
+  def search
+    @users = User.like_email(params[:key])
+                 .member
+                 .limit Settings.limit.user_searching
+    respond_to do |format|
+      format.json{render json: @users}
     end
   end
 
