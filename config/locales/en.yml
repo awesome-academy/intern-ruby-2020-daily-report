@@ -82,6 +82,8 @@ en:
     delete_report_failed: "Can not delete this report!"
     delete_report_success: "Deleted success!"
     find_report_error: "Can not find report!"
+    edit_report_success: "Success!"
+    edit_report_faild: "Faild!"
     index:
       daily_report: "Daily report"
       create: "Create"
@@ -98,9 +100,11 @@ en:
       edit: "Edit"
       confirm_delete: "Are you sure?"
       detail: "Detail"
+      edit: "Edit"
     new:
       create_report: "Create daily report"
       today: "Today:"
+      create: "Create"
     create_form:
       create: "Create"
     filter_form:
@@ -109,6 +113,9 @@ en:
       status: "Status"
     show:
       title: "Report detail"
+    edit:
+      title: "Edit report"
+      save_change: "Save change"
   manager:
     reports:
       index:

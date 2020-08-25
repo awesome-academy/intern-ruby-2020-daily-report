@@ -1,7 +1,7 @@
 class ReportsController < ApplicationController
   before_action :require_login, ->{check_role? :member}
-  before_action :paginate_reports, only: %i(index update)
-  before_action :find_report, only: %i(update show)
+  before_action :paginate_reports, only: %i(index destroy)
+  before_action :find_report, except: %i(new create index)
   before_action :belong_to_division?, only: %i(new create)
 
   def index; end
@@ -29,6 +29,18 @@ class ReportsController < ApplicationController
   end
 
   def update
+    if @report.update report_params
+      flash[:success] = t ".edit_report_success"
+      redirect_to reports_path
+    else
+      flash[:danger] = t ".edit_report_faild"
+      redirect_to edit_report_path params[:id]
+    end
+  end
+
+  def edit; end
+
+  def destroy
     @report.update deleted: true
     respond_to do |format|
       format.html{redirect_to reports_path}

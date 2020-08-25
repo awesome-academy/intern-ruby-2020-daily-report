@@ -1,0 +1,5 @@
+<%= provide :title, t(".title") %>
+<% provide :button_text, t(".save_change") %>
+<div class="col-md-12 box-show">
+  <%= render "create_form", report: @report %>
+</div>

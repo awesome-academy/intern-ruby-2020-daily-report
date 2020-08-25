@@ -82,6 +82,8 @@ vi:
     delete_report_failed: "Thất bại! Không thể xóa report."
     delete_report_success: "Xóa thành công!"
     find_report_error: "Không thể tìm report!"
+    edit_report_success: "Thành công!"
+    edit_report_faild: "Thất bại!"
     index:
       daily_report: "Daily report"
       create: "Create"
@@ -98,9 +100,11 @@ vi:
       edit: "Sửa"
       confirm_delete: "Bạn có muốn xóa không?"
       detail: "Chi tiết"
+      edit: "Chỉnh sửa"
     new:
       create_report: "Tạo daily report"
       today: "Ngày:"
+      create: "Tạo mới"
     create_form:
       create: "Tạo mới"
     filter_form:
@@ -109,6 +113,9 @@ vi:
       status: "Trạng thái"
     show:
       title: "Chi tiết"
+    edit:
+      title: "Chỉnh sửa report"
+      save_change: "Save change"
   manager:
     reports:
       index:
