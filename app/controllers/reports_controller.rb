@@ -1,9 +1,8 @@
 class ReportsController < ApplicationController
-  before_action :require_login
+  before_action :require_login, -> {check_role? :member}
   before_action :paginate_reports, only: %i(index update)
   before_action :find_report, only: %i(update show)
   before_action :belong_to_division?, only: %i(new create)
-  before_action{check_role? :member}
 
   def index; end
 
@@ -49,9 +48,8 @@ class ReportsController < ApplicationController
                      .by_date_created(params[:date]&.first)
                      .by_status(params[:status])
                      .recent_reports
-    @num_of_reports = @reports.size
-    @reports = @reports.page(params[:page])
-                       .per Settings.paginate.items_per_page
+                     .page(params[:page])
+                     .per Settings.paginate.items_per_page
   end
 
   def find_report

@@ -1,23 +1,21 @@
-<% reports.each.with_index(1) do |report, index| %>
-  <tr>
-    <td>
-      <% if report.waiting? %>
-        <%= check_box_tag "report_ids[]", report.id, false, class: "report-checkbox" %>
-      <% else %>
-        <%= check_box_tag "report_ids[]", report.id, false, disabled: true %>
-      <% end %>
-    </td>
-    <td>
-      <%= item_id index, params[:page] %>
-    </td>
-    <td><%= report.user.name %></td>
-    <td><%= report.user.email %></td>
-    <td><%= report.created_at.strftime Settings.date.validate %></td>
-    <td>
-      <%= report.status %>
-    </td>
-    <td>
-      <%= link_to t(".detail"), manager_report_path(report.id) %>
-    </td>
-  </tr>
-<% end %>
+<tr>
+  <td>
+    <% if report.waiting? %>
+      <%= check_box_tag "report_ids[]", report.id, false, class: "report-checkbox" %>
+    <% else %>
+      <%= check_box_tag "report_ids[]", report.id, false, disabled: true %>
+    <% end %>
+  </td>
+  <td>
+    <%= item_id report_counter, params[:page] %>
+  </td>
+  <td><%= report.user_name %></td>
+  <td><%= report.user_email %></td>
+  <td><%= report.created_at.strftime Settings.date.validate %></td>
+  <td>
+    <%= report.status %>
+  </td>
+  <td>
+    <%= link_to t(".detail"), manager_report_path(report.id) %>
+  </td>
+</tr>

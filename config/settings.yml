@@ -14,6 +14,8 @@ form:
   num_row_comment: 5
 paginate:
   items_per_page: 10
+  index_plus: 1
+  page_minus: 1
 select_option:
   filter_status: [["All", ""], ["Waitting", "0"], ["Checked", "1"]]
 date:
@@ -24,3 +26,7 @@ time:
   timezone: "Asia/Ho_Chi_Minh"
 image:
   default_avatar: "default-avatar.jpg"
+role:
+  manager: "manager"
+  member: "member"
+  admin: "admin"

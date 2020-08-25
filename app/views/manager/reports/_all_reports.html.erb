@@ -20,7 +20,7 @@
       </tr>
     </thead>
     <tbody id="body-report-table">
-      <%= render "report_table", reports: reports %>
+      <%= render partial: "report_table", collection: @reports, as: :report %>
     </tbody>
   </table>
   <%= submit_tag t(".checked"), class: "btn btn-link", id: "btn-checked-report" %>

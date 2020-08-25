@@ -1,4 +1,4 @@
 $("#tbody-all-report").html(
-  "<%= j (render("report_table", reports: @reports)) %>"
+  "<%= j (render partial: "report_table", collection: @reports, as: :report) %>"
 );
-$("#num-reports").html("<%= @num_of_reports %>");
+$("#num-reports").html("<%= reports.total_count %>");

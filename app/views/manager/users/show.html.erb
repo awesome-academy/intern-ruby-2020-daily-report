@@ -1,0 +1,9 @@
+<%= provide :title, @user.name %>
+<div class="col-md-9 box-show box-account-info">
+  <%= render "shared/account_info", user: @user, division: @division %>
+  <% if @user.division_id.eql? current_user.division_id %>
+    <%= link_to t(".remove"), manager_user_path(@user, nonremote: true), class: "btn btn-warning", role: "button", method: :put, data: { confirm: t(".confirm_remove") } %>
+  <% elsif @user.division_id.eql? Settings.division.default %>
+    <%= link_to t(".add"), manager_user_path(@user, nonremote: true), class: "btn btn-info", role: "button", method: :put, data: { confirm: t(".confirm_add") } %>
+  <% end %>
+</div>
