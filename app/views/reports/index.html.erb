@@ -6,9 +6,7 @@
   <div class="box-show">
     <div class="div-create-btn">
       <% unless current_user.division_id.eql? Settings.division.default %>
-        <button type="button" class="btn btn-info">
-          <%= link_to t(".create"), new_report_path %>
-        </button>
+        <%= link_to t(".create"), new_report_path, class: "btn btn-info", role: "button" %>
       <% end %>
     </div>
     <% if current_user.reports.any? %>

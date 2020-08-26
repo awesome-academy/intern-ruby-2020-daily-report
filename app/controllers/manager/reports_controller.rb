@@ -7,7 +7,7 @@ class Manager::ReportsController < ApplicationController
 
   def update
     Report.by_ids(params[:report_ids])
-          .find_each &:checked!
+          .find_each(&:checked!)
     respond_to do |format|
       format.html{redirect_to manager_reports_path}
       format.js

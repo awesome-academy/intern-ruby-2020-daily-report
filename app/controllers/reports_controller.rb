@@ -3,11 +3,15 @@ class ReportsController < ApplicationController
   before_action :paginate_reports, only: %i(index destroy)
   before_action :find_report, except: %i(new create index)
   before_action :belong_to_division?, only: %i(new create)
+  before_action :today_reports, only: :new
 
   def index; end
 
   def new
-    @report = current_user.reports.build
+    return @report = current_user.reports.build if @today_reports.blank?
+
+    flash[:danger] = t ".error_create_path"
+    redirect_to reports_path
   end
 
   def create
@@ -70,5 +74,11 @@ class ReportsController < ApplicationController
 
     flash[:danger] = t ".find_report_error"
     redirect_to reports_path
+  end
+
+  def today_reports
+    @today_reports = Report.by_users(current_user.id)
+                           .by_date_created(Date.current)
+                           .active_reports
   end
 end

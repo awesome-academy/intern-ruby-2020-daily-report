@@ -55,7 +55,11 @@ class Manager::UsersController < ApplicationController
   end
 
   def update_user_nonremote
-    division_id = @user.division_id.eql?(Settings.division.default) ? current_user.division_id : Settings.division.default
+    division_id = if @user.division_id.eql? Settings.division.default
+                    current_user.division_id
+                  else
+                    Settings.division.default
+                  end
     @user.update division_id: division_id
   end
 end

@@ -1,6 +1,9 @@
 vi:
   js:
     error_comment: "Không thể bình luận. Nội dung quá dài (tối đa 500 ký tự)"
+    create_reports:
+      exist_report: "Không thể tạo report. Bạn đã tạo report ngày hôm nay."
+      no_division: "Không thể tạo report. Bạn không thuộc về phòng ban nào."
   home:
     index:
       title: "Daily report"
@@ -84,6 +87,7 @@ vi:
     find_report_error: "Không thể tìm report!"
     edit_report_success: "Thành công!"
     edit_report_faild: "Thất bại!"
+    error_create_path: "Không thể tạo report. Bạn đã tạo report ngày hôm nay."
     index:
       daily_report: "Daily report"
       create: "Create"
