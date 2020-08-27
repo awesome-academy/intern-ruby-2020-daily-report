@@ -30,4 +30,12 @@ class Report < ApplicationRecord
   scope :by_status, (lambda do |status|
     where(status: status) if status.present?
   end)
+  scope :order_by_created, (lambda do |type_order|
+    type_order = type_order.presence || :desc
+    order created_at: type_order
+  end)
+  scope :order_by_status, (lambda do |type_order|
+    type_order = type_order.presence || :asc
+    order status: type_order
+  end)
 end

@@ -23,13 +23,7 @@ class Manager::ReportsController < ApplicationController
   private
 
   def paginate_reports
-    users = user_in_division
-    @reports = Report.by_users(users)
-                     .active_reports
-                     .by_date_created(params[:date]&.first)
-                     .by_status(params[:status])
-                     .recent_reports
-    @num_of_reports = @reports.size
+    select_reports
     @reports = @reports.page(params[:page])
                        .per Settings.paginate.items_per_page
   end
@@ -46,5 +40,15 @@ class Manager::ReportsController < ApplicationController
 
     flash[:danger] = t ".find_report_error"
     redirect_to reports_path
+  end
+
+  def select_reports
+    users = user_in_division
+    @reports = Report.by_users(users)
+                     .active_reports
+                     .by_date_created(params[:date]&.first)
+                     .by_status(params[:status])
+                     .order_by_status(params[:order_status])
+                     .order_by_created params[:order_created]
   end
 end

@@ -32,3 +32,9 @@ role:
   admin: "admin"
 limit:
   user_searching: 5
+order:
+  asc: "ASC"
+  desc: "DESC"
+icon:
+  sort_up: "up"
+  sort_down: "down"

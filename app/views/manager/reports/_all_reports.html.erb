@@ -2,11 +2,11 @@
   <h4>
     <%= t ".all_report" %>
     (<span id="num-reports">
-      <%= num_of_reports %>
+      <%= reports.total_count %>
     </span>)
   </h4>
 </div>
-<%= form_tag manager_reports_path(page: params[:page], date: params[:date], name: params[:name], email: params[:email], status: params[:status]), method: :put, remote: true, id: "checkbox-form" do %>
+<%= form_tag manager_reports_path(page: params[:page], date: params[:date], name: params[:name], email: params[:email], status: params[:status], order_status: params[:order_status], order_created: params[:order_created]), method: :put, remote: true, id: "checkbox-form" do %>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -14,8 +14,12 @@
         <th><%= t ".id" %></th>
         <th><%= t ".name" %></th>
         <th><%= t ".email" %></th>
-        <th><%= t ".date_created" %></th>
-        <th><%= t ".status" %></th>
+        <th>
+          <%= layout_order_report_created params[:order_created] %>
+        </th>
+        <th>
+          <%= layout_order_report_status params[:order_status] %>
+        </th>
         <th><%= t ".action" %></th>
       </tr>
     </thead>
