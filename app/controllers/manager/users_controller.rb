@@ -46,10 +46,11 @@ class Manager::UsersController < ApplicationController
   end
 
   def paginate_members
+    per_page = params[:per_page].presence || Settings.paginate.per_page_default
     @members = User.by_division_id(current_user.division_id)
                    .member
                    .page(params[:page])
-                   .per Settings.paginate.items_per_page
+                   .per per_page
     @managers = User.by_division_id(current_user.division_id)
                     .manager
   end

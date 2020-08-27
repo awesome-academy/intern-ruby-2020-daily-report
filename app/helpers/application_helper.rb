@@ -56,4 +56,24 @@ module ApplicationHelper
     end
   end
   # rubocop:enable Metrics/AbcSize
+
+  def link_per_page_manager_reports items_per_page
+    link_to items_per_page, manager_reports_path(date: params[:date],
+                                 name: params[:name],
+                                 email: params[:email],
+                                 status: params[:status],
+                                 order_status: params[:order_status],
+                                 order_created: params[:order_created],
+                                 per_page: items_per_page)
+  end
+
+  def link_per_page_manager_users items_per_page
+    link_to items_per_page, manager_users_path(per_page: items_per_page)
+  end
+
+  def link_per_page_reports items_per_page
+    link_to items_per_page, reports_path(status: params[:status],
+                                         date: params[:date],
+                                         per_page: items_per_page)
+  end
 end

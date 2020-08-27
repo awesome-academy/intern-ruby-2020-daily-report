@@ -24,8 +24,9 @@ class Manager::ReportsController < ApplicationController
 
   def paginate_reports
     select_reports
+    per_page = params[:per_page].presence || Settings.paginate.per_page_default
     @reports = @reports.page(params[:page])
-                       .per Settings.paginate.items_per_page
+                       .per per_page
   end
 
   def user_in_division

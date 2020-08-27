@@ -18,4 +18,16 @@
     <%= render partial: "report_table", collection: reports, as: :report %>
   </tbody>
 </table>
+<% if reports.total_count > Settings.paginate.per_page_default.to_i %>
+  <div>
+    <span><%= t ".per_page" %></span>
+    <% if params[:per_page].eql? Settings.paginate.per_page_option_1 %>
+      <%= link_per_page_reports Settings.paginate.per_page_default %>
+      <span><%= Settings.paginate.per_page_option_1 %></span>
+    <% else %>
+      <span><%= Settings.paginate.per_page_default %></span>
+      <%= link_per_page_reports Settings.paginate.per_page_option_1 %>
+    <% end %>
+  </div>
+<% end %>
 <%= paginate reports %>
