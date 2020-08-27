@@ -5,18 +5,21 @@ class Manager::ReportsController < ApplicationController
 
   def index; end
 
+  # rubocop:disable Rails/SkipsModelValidations
   def update
     Report.by_ids(params[:report_ids])
-          .find_each(&:checked!)
+          .update_all status: params[:update_status]
     respond_to do |format|
       format.html{redirect_to manager_reports_path}
       format.js
     end
   end
+  # rubocop:enable Rails/SkipsModelValidations
 
   def show
     @user = @report.user
-    @comments = Comment.by_report_id(params[:id])
+    @comments = Comment.includes_user
+                       .by_report_id(params[:id])
                        .order_by_created_at
   end
 
@@ -48,7 +51,8 @@ class Manager::ReportsController < ApplicationController
 
   def select_reports
     users = user_in_division
-    @reports = Report.by_users(users)
+    @reports = Report.includes_user
+                     .by_users(users)
                      .active_reports
                      .by_date_created(params[:date]&.first)
                      .by_status(params[:status])

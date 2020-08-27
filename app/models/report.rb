@@ -2,7 +2,7 @@ class Report < ApplicationRecord
   REPORTS_PARAMS = %i(today_plan actual reason_not_complete
     tomorrow_plan free_comment).freeze
 
-  enum status: {waiting: 0, checked: 1}
+  enum status: {waiting: 0, checked: 1, rejected: 2}
 
   belongs_to :user
   has_many :comments, dependent: :destroy
@@ -20,6 +20,7 @@ class Report < ApplicationRecord
 
   delegate :name, :email, to: :user, prefix: true
 
+  scope :includes_user, ->{includes :user}
   scope :recent_reports, ->{order created_at: :desc}
   scope :active_reports, ->{where deleted: false}
   scope :by_ids, ->(report_ids){where id: report_ids}

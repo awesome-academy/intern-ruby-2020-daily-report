@@ -29,6 +29,7 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+  scope :includes_division, ->{includes :division}
   scope :by_division_id, (lambda do |division_id|
     where(division_id: division_id)
   end)

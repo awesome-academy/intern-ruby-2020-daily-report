@@ -20,7 +20,7 @@ paginate:
   per_page_option_1: "30"
   per_page_option_2: "50"
 select_option:
-  filter_status: [["All", ""], ["Waitting", "0"], ["Checked", "1"]]
+  filter_status: [["All", ""], ["Waitting", "0"], ["Checked", "1"], ["Rejected", "2"]]
 date:
   validate: "%d-%m-%Y %H:%M"
 division:
@@ -43,4 +43,7 @@ icon:
   sort_down: "down"
   pager: "pager"
   list: "list"
+  times: "times"
+  check: "check"
+  spinner: "spinner"
 report_table_text: 100
