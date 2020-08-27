@@ -100,6 +100,9 @@ en:
       status: "Status"
       action: "Action"
       per_page: "Per page: "
+      today_plan: "Today plan"
+      actual: "Actual"
+      tomorrow_plan: "Tomorrow plan"
     report_table:
       delete: "Delete"
       edit: "Edit"
@@ -138,6 +141,8 @@ en:
         select: "Select"
         show_all: "Show all"
         per_page: "Per page: "
+        clear: "Clear filter"
+        paginate: "Paginate"
       report_table:
         detail: "Detail"
         waiting: "Waiting"

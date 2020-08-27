@@ -100,6 +100,9 @@ vi:
       status: "Trạng thái"
       action: "Hành động"
       per_page: "Per page: "
+      today_plan: "Kế hoạch hôm nay"
+      actual: "Thực tế"
+      tomorrow_plan: "Kế hoạch ngày mai"
     report_table:
       delete: "Xóa"
       edit: "Sửa"
@@ -138,6 +141,8 @@ vi:
         select: "Chọn"
         show_all: "Tất cả"
         per_page: "Số report một trang: "
+        clear: "Clear filter"
+        paginate: "Paginate"
       report_table:
         detail: "Chi tiết"
         waiting: "Đang chờ"

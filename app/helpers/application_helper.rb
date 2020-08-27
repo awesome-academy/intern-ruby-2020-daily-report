@@ -25,7 +25,9 @@ module ApplicationHelper
                                  email: params[:email],
                                  status: params[:status],
                                  order_status: params[:order_status],
-                                 order_created: order_type),
+                                 order_created: order_type,
+                                 show_all: params[:show_all],
+                                 per_page: params[:per_page]),
             class: "sort-report-link" do
       tags << content_tag(:span, t(".date_created"))
       tags << content_tag(:i, "", class: "fas fa-sort-#{icon}")
@@ -49,7 +51,9 @@ module ApplicationHelper
                                  email: params[:email],
                                  status: params[:status],
                                  order_status: order_type,
-                                 order_created: params[:order_created]),
+                                 order_created: params[:order_created],
+                                 show_all: params[:show_all],
+                                 per_page: params[:per_page]),
             class: "sort-report-link" do
       tags << content_tag(:span, t(".status"))
       tags << content_tag(:i, "", class: "fas fa-sort-#{icon}")
@@ -64,6 +68,7 @@ module ApplicationHelper
                                  status: params[:status],
                                  order_status: params[:order_status],
                                  order_created: params[:order_created],
+                                 show_all: params[:show_all],
                                  per_page: items_per_page)
   end
 
@@ -76,4 +81,22 @@ module ApplicationHelper
                                          date: params[:date],
                                          per_page: items_per_page)
   end
+
+  # rubocop:disable Metrics/AbcSize
+  def link_show_paginate_reports show_all, icon, content
+    tags = html_escape("")
+    link_to manager_reports_path(date: params[:date],
+                                 name: params[:name],
+                                 email: params[:email],
+                                 status: params[:status],
+                                 order_status: params[:order_status],
+                                 order_created: params[:order_created],
+                                 per_page: params[:per_page],
+                                 show_all: show_all),
+            class: "report-top-option btn btn-default" do
+      tags << content_tag(:i, "", class: "fas fa-#{icon}")
+      tags << content_tag(:span, content)
+    end
+  end
+  # rubocop:enable Metrics/AbcSize
 end
