@@ -1,0 +1,57 @@
+workspace: true
+
+stages:
+- build
+- test
+
+jobs:
+- name: build:prepare
+  stage: build
+  image: manhbnt/ruby:2.7.1
+  script:
+  - cp database-ci.yml config/database.yml
+  - bundle _2.1.4_ install --path vendor/bundle
+  cache:
+  - key: vendor_$CI_BRANCH
+    paths:
+    - vendor/bundle
+
+- name: test:rspec
+  stage: test
+  image: manhbnt/ruby:2.7.1
+  services:
+  - image: mysql:5.7.22
+    name: mysql
+    environment:
+      MYSQL_DATABASE: database_name
+      MYSQL_USER: mysql_user
+      MYSQL_PASSWORD: mysql_password
+      MYSQL_ROOT_PASSWORD: root
+  before_script:
+  - bundle _2.1.4_ install --path vendor/bundle
+  script:
+  - bundle _2.1.4_ exec rspec
+
+- name: test:bundle_audit
+  stage: test
+  image: manhbnt/ruby:2.7.1
+  before_script:
+  - bundle _2.1.4_ install --path vendor/bundle
+  script:
+  - bundle exec bundle audit check --update
+
+- name: test:rubocop
+  stage: test
+  image: manhbnt/ruby:2.7.1
+  before_script:
+  - bundle _2.1.4_ install --path vendor/bundle
+  script:
+  - bundle exec rubocop --require rubocop/formatter/checkstyle_formatter --format RuboCop::Formatter::CheckstyleFormatter --no-color --out .framgia-ci-reports/rubocop.xml app/ lib/
+
+- name: test:rails_best_practice
+  stage: test
+  image: manhbnt/ruby:2.7.1
+  before_script:
+  - bundle _2.1.4_ install --path vendor/bundle
+  script:
+  - bundle exec rails_best_practices -e "db/schema.rb,db/migrate,vendor,app/models/application_record.rb" app/ lib/ -c .rails_best_practices.yml

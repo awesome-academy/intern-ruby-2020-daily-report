@@ -11,7 +11,7 @@ gem "config"
 gem "i18n-js"
 gem "image_processing", "1.9.3"
 gem "jbuilder", "~> 2.7"
-gem "jquery-rails", "4.3.1"
+gem "jquery-rails", "4.3.4"
 gem "kaminari"
 gem "mini_magick", "4.9.5"
 gem "mysql2"
@@ -23,11 +23,13 @@ gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 
 group :development, :test do
+  gem "bundle-audit"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "rails_best_practices"
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
+  gem "rspec-rails", "~> 4.0.1"
 end
 
 group :development do
