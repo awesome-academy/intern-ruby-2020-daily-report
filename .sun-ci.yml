@@ -32,14 +32,6 @@ jobs:
   script:
   - bundle _2.1.4_ exec rspec
 
-- name: test:bundle_audit
-  stage: test
-  image: manhbnt/ruby:2.7.1
-  before_script:
-  - bundle _2.1.4_ install --path vendor/bundle
-  script:
-  - bundle exec bundle audit check --update
-
 - name: test:rubocop
   stage: test
   image: manhbnt/ruby:2.7.1
@@ -47,11 +39,3 @@ jobs:
   - bundle _2.1.4_ install --path vendor/bundle
   script:
   - bundle exec rubocop --require rubocop/formatter/checkstyle_formatter --format RuboCop::Formatter::CheckstyleFormatter --no-color --out .framgia-ci-reports/rubocop.xml app/ lib/
-
-- name: test:rails_best_practice
-  stage: test
-  image: manhbnt/ruby:2.7.1
-  before_script:
-  - bundle _2.1.4_ install --path vendor/bundle
-  script:
-  - bundle exec rails_best_practices -e "db/schema.rb,db/migrate,vendor,app/models/application_record.rb" app/ lib/ -c .rails_best_practices.yml
