@@ -28,7 +28,8 @@ class ReportsController < ApplicationController
 
   def show
     @user = @report.user
-    @comments = Comment.by_report_id(params[:id])
+    @comments = Comment.includes_user
+                       .by_report_id(params[:id])
                        .order_by_created_at
   end
 

@@ -99,4 +99,13 @@ module ApplicationHelper
     end
   end
   # rubocop:enable Metrics/AbcSize
+
+  def option_update_status_button value, icon, btn_content
+    tags = html_escape("")
+    button_tag :submit, class: "btn btn-default report-top-option",
+                name: :update_status, value: value do
+      tags << content_tag(:i, "", class: "fas fa-#{icon}")
+      tags << content_tag(:span, btn_content)
+    end
+  end
 end

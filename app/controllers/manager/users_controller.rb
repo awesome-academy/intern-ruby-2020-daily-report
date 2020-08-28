@@ -47,7 +47,8 @@ class Manager::UsersController < ApplicationController
 
   def paginate_members
     per_page = params[:per_page].presence || Settings.paginate.per_page_default
-    @members = User.by_division_id(current_user.division_id)
+    @members = User.includes_division
+                   .by_division_id(current_user.division_id)
                    .member
                    .page(params[:page])
                    .per per_page

@@ -9,6 +9,7 @@ class Comment < ApplicationRecord
 
   delegate :name, :avatar, to: :user, prefix: true
 
+  scope :includes_user, ->{includes :user}
   scope :order_by_created_at, ->{order created_at: :desc}
   scope :by_report_id, ->(report_id){where(report_id: report_id)}
 end

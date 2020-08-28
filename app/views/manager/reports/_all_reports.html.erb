@@ -7,10 +7,20 @@
   </h4>
 </div>
 <%= form_tag manager_reports_path(page: params[:page], date: params[:date], name: params[:name], email: params[:email], status: params[:status], order_status: params[:order_status], order_created: params[:order_created], per_page: params[:per_page], show_all: params[:show_all]), method: :put, remote: true, id: "checkbox-form" do %>
-  <%= button_tag :submit, class: "btn btn-default report-top-option", id: "btn-checked-report" do %>
-    <i class="fas fa-check"></i>
-    <span><%= t ".checked" %></span>
-  <% end %>
+  <button class="btn btn-default report-top-option dropdown-toggle" type="button" data-toggle="dropdown">
+    <%= t ".status" %>
+  </button>
+  <ul class="dropdown-menu">
+    <li>
+      <%= option_update_status_button :checked, Settings.icon.check, t(".checked") %>
+    </li>
+    <li>
+      <%= option_update_status_button :waiting, Settings.icon.spinner, t(".waiting") %>
+    </li>
+    <li>
+      <%= option_update_status_button :rejected, Settings.icon.times, t(".reject") %>
+    </li>
+  </ul>
   <% if params[:show_all] %>
     <%= link_show_paginate_reports nil, Settings.icon.pager, t(".paginate") %>
   <% else %>
@@ -42,7 +52,7 @@
   </table>
   <% if reports.total_count > Settings.paginate.per_page_default.to_i && !params[:show_all] %>
     <div>
-      <%= t(".per_page") %>
+      <%= t ".per_page" %>
       <% if params[:per_page].eql? Settings.paginate.per_page_option_1 %>
         <%= link_per_page_manager_reports Settings.paginate.per_page_default %>
         <span><%= Settings.paginate.per_page_option_1 %></span>

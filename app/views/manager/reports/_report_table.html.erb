@@ -1,10 +1,6 @@
 <tr>
   <td>
-    <% if report.waiting? %>
-      <%= check_box_tag "report_ids[]", report.id, false, class: "report-checkbox" %>
-    <% else %>
-      <%= check_box_tag "report_ids[]", report.id, false, disabled: true %>
-    <% end %>
+    <%= check_box_tag "report_ids[]", report.id, false, class: "report-checkbox" %>
   </td>
   <td>
     <%= item_id report_counter, params[:page] %>
