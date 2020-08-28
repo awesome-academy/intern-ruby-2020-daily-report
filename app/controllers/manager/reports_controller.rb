@@ -27,6 +27,9 @@ class Manager::ReportsController < ApplicationController
     per_page = params[:per_page].presence || Settings.paginate.per_page_default
     @reports = @reports.page(params[:page])
                        .per per_page
+    return unless params[:show_all]
+
+    @reports = @reports.except :limit, :offset
   end
 
   def user_in_division

@@ -41,3 +41,6 @@ order:
 icon:
   sort_up: "up"
   sort_down: "down"
+  pager: "pager"
+  list: "list"
+report_table_text: 100

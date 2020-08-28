@@ -6,7 +6,20 @@
     </span>)
   </h4>
 </div>
-<%= form_tag manager_reports_path(page: params[:page], date: params[:date], name: params[:name], email: params[:email], status: params[:status], order_status: params[:order_status], order_created: params[:order_created], per_page: params[:per_page]), method: :put, remote: true, id: "checkbox-form" do %>
+<%= form_tag manager_reports_path(page: params[:page], date: params[:date], name: params[:name], email: params[:email], status: params[:status], order_status: params[:order_status], order_created: params[:order_created], per_page: params[:per_page], show_all: params[:show_all]), method: :put, remote: true, id: "checkbox-form" do %>
+  <%= button_tag :submit, class: "btn btn-default report-top-option", id: "btn-checked-report" do %>
+    <i class="fas fa-check"></i>
+    <span><%= t ".checked" %></span>
+  <% end %>
+  <% if params[:show_all] %>
+    <%= link_show_paginate_reports nil, Settings.icon.pager, t(".paginate") %>
+  <% else %>
+    <%= link_show_paginate_reports true, Settings.icon.list, t(".show_all") %>
+  <% end %>
+  <%= link_to manager_reports_path(per_page: params[:per_page], show_all: params[:show_all]), class: "report-top-option btn btn-default" do %>
+    <i class="fas fa-undo"></i>
+    <%= t ".clear" %>
+  <% end %>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -27,7 +40,7 @@
       <%= render partial: "report_table", collection: @reports, as: :report %>
     </tbody>
   </table>
-  <% if reports.total_count > Settings.paginate.per_page_default.to_i %>
+  <% if reports.total_count > Settings.paginate.per_page_default.to_i && !params[:show_all] %>
     <div>
       <%= t(".per_page") %>
       <% if params[:per_page].eql? Settings.paginate.per_page_option_1 %>
@@ -39,7 +52,7 @@
       <% end %>
     </div>
   <% end %>
-  <%= submit_tag t(".checked"), class: "btn btn-link", id: "btn-checked-report" %>
-  <%= link_to t(".show_all"), manager_reports_path %>
 <% end %>
-<%= paginate reports %>
+<% unless params[:show_all] %>
+  <%= paginate reports %>
+<% end %>
