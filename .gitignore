@@ -42,3 +42,5 @@ yarn-debug.log*
 
 .browserslistrc
 /config/credentials.yml.enc
+
+/coverage
