@@ -7,7 +7,9 @@ gem "active_storage_validations", "0.8.2"
 gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "bootstrap-sass", "3.4.1"
+gem "ckeditor", github: "galetahub/ckeditor"
 gem "config"
+gem "faker", "~> 2.12"
 gem "i18n-js"
 gem "image_processing", "1.9.3"
 gem "jbuilder", "~> 2.7"
@@ -25,6 +27,7 @@ gem "webpacker", "~> 4.0"
 group :development, :test do
   gem "bundle-audit"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails"
   gem "rails_best_practices"
   gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 0.74.0", require: false
@@ -41,7 +44,10 @@ end
 
 group :test do
   gem "capybara", ">= 2.15"
+  gem "database_cleaner-active_record"
   gem "selenium-webdriver"
+  gem "shoulda-matchers"
+  gem "simplecov", require: false
   gem "webdrivers"
 end
 
