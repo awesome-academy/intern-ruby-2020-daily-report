@@ -47,3 +47,10 @@ icon:
   check: "check"
   spinner: "spinner"
 report_table_text: 100
+rspec:
+  default_password: "11111111"
+reports:
+  status:
+    waiting: 0
+    checked: 1
+    rejected: 2
