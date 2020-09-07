@@ -49,6 +49,8 @@ icon:
 report_table_text: 100
 rspec:
   default_password: "11111111"
+  factory_reports_size: 15
+  factory_comments_size: 10
 reports:
   status:
     waiting: 0
