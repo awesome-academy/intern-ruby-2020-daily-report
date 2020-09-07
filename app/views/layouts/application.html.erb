@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       <div class="wrapper">
         <%= render "layouts/sidebar" %>
         <div id="content">

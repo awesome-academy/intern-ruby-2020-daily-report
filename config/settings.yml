@@ -56,3 +56,6 @@ reports:
     waiting: 0
     checked: 1
     rejected: 2
+email:
+  host: "localhost:3000"
+  default: "ndt012399@gmail.com"

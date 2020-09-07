@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
+         :confirmable
   USERS_PARAMS = %i(name email password password_confirmation avatar).freeze
 
   enum role: {member: 0, manager: 1, admin: 2}
@@ -24,8 +27,6 @@ class User < ApplicationRecord
                            message: I18n.t("users.avatar_type_validate")}
 
   delegate :division_name, to: :division
-
-  has_secure_password
 
   before_save :downcase_email
 

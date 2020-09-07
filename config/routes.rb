@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "account#index"
 
-    get "/signup", to: "users#new"
-    post "/signup", to: "users#create"
-    get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
     put "/manager/reports", to: "manager/reports#update"
+
+    devise_for :users, controllers: {
+      sessions: "users/sessions",
+      registrations: "users/registrations",
+      passwords: "users/passwords",
+      confirmations: "users/confirmations"
+    }
 
     namespace :manager do
       get "/users/search", to: "users#search"
