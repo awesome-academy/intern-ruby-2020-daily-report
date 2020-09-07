@@ -4,24 +4,12 @@ vi:
     create_reports:
       exist_report: "Không thể tạo report. Bạn đã tạo report ngày hôm nay."
       no_division: "Không thể tạo report. Bạn không thuộc về phòng ban nào."
+  validates:
+    password:
+      error_regex: "phải có ít nhất một ký tự thường, một ký tự in hoa và một ký tự số"
   home:
     index:
       title: "Daily report"
-  users:
-    signup_faild_notify: "Đăng ký thất bại!"
-    signup_success_notify: "Đăng ký thành công!"
-    avatar_type_validate: "Bạn phải chọn một hình ảnh."
-    new:
-      title: "Đăng ký"
-      answer_account: "Bạn đã có tài khoản?"
-      sign_in: "Đăng nhập"
-      register: "Đăng ký"
-      welcome_register: "Tạo tài khoản mới cho bạn."
-    form:
-      name: "Tên"
-      email: "Email"
-      password: "Mật khẩu"
-      confirm_password: "Nhập lại mật khẩu"
   shared:
     error_messages:
       message_error: "Có "
@@ -85,12 +73,18 @@ vi:
         title: "Đăng nhập"
         welcome_login: "Đăng nhập tài khoản của bạn"
         log_in_btn: "Đăng nhập"
+        facebook: "Facebook"
+        google: "Google"
+        or_signin: "Hoặc đăng nhập bằng"
     registrations:
       new:
         title: "Đăng ký"
         register: "Register"
         welcome_register: "Tạo tài khoản mới."
         characters_minimum: "ký tự tối thiểu"
+        facebook: "Facebook"
+        google: "Google"
+        or_signin: "Hoặc đăng nhập bằng"
     shared:
       links:
         sign_in: "Đăng nhập"

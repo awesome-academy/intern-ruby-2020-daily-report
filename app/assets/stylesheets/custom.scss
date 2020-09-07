@@ -386,3 +386,24 @@ a[aria-expanded='true']::before {
 .auth-title-color {
   color: $auth_title_color
 }
+
+.auth {
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 5px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.auth-facebook {
+  background: $facebook-btn-background;
+  color: white;
+}
+
+.auth-google {
+  background: $google-btn-background;
+  color: white;
+}

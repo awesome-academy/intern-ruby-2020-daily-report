@@ -4,24 +4,12 @@ en:
     create_reports:
       exist_report: "Can not create report! You created a report today."
       no_division: "Can not create report! You do not belong to any division."
+  validates:
+    password:
+      error_regex: "must include at least one lowercase letter, one uppercase letter, and one digit"
   home:
     index:
       title: "Daily report"
-  users:
-    signup_faild_notify: "Sign up failed!"
-    signup_success_notify: "Sign up successed!"
-    avatar_type_validate: "Must be a valid image format"
-    new:
-      title: "Sign up"
-      answer_account: "Already have an account?"
-      sign_in: "Log in"
-      register: "Register"
-      welcome_register: "Create your account. It's free and only takes a minute."
-    form:
-      name: "Name"
-      email: "Email"
-      password: "Password"
-      confirm_password: "Password confirmation"
   shared:
     error_messages:
       message_error: "The form contains"
@@ -85,12 +73,18 @@ en:
         title: "Sign in"
         welcome_login: "Sign in to your accout"
         log_in_btn: "Sign in"
+        facebook: "Facebook"
+        google: "Google"
+        or_signin: "Or sign in with"
     registrations:
       new:
         title: "Sign up"
         register: "Register"
         welcome_register: "Create your account. It's free and only takes a minute."
         characters_minimum: "characters minimum"
+        facebook: "Facebook"
+        google: "Google"
+        or_signin: "Or sign in with"
     shared:
       links:
         sign_in: "Sign in"

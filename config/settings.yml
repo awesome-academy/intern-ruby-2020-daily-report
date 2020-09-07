@@ -9,6 +9,8 @@ validates:
     max_length: 500
   comment:
     max_length: 500
+  password:
+    regex: !ruby/regexp /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s])/i
 form:
   num_row: 4
   num_row_comment: 5
@@ -48,7 +50,7 @@ icon:
   spinner: "spinner"
 report_table_text: 100
 rspec:
-  default_password: "11111111"
+  default_password: "Ndt@1111111"
   factory_reports_size: 15
   factory_comments_size: 10
 reports:

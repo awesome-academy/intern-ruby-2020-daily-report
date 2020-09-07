@@ -1,8 +1,10 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable
+         :confirmable,
+         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   USERS_PARAMS = %i(name email password password_confirmation avatar).freeze
+  PASSWORD_REGEX = Settings.validates.password.regex
 
   enum role: {member: 0, manager: 1, admin: 2}
 
@@ -25,6 +27,7 @@ class User < ApplicationRecord
   validates :avatar,
             content_type: {in: Settings.validates.user.avatar_type.split,
                            message: I18n.t("users.avatar_type_validate")}
+  validate :password_complexity
 
   delegate :division_name, to: :division
 
@@ -41,9 +44,36 @@ class User < ApplicationRecord
     where("name like :name", name: "%#{name}%") if name.present?
   end)
 
+  class << self
+    def from_omniauth auth
+      user = User.find_by email: auth.info.email
+      return user if user
+
+      omniauth_user auth
+    end
+
+    def omniauth_user auth
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+        user.email = auth.info.email
+        user.password = Devise.friendly_token[0, 20]
+        user.name = auth.info.name
+        user.image = auth.info.image
+        user.uid = auth.uid
+        user.provider = auth.provider
+        user.skip_confirmation!
+      end
+    end
+  end
+
   private
 
   def downcase_email
     email.downcase!
+  end
+
+  def password_complexity
+    return unless password.present? && !password.match(PASSWORD_REGEX)
+
+    errors.add :password, I18n.t("validates.password.error_regex")
   end
 end
