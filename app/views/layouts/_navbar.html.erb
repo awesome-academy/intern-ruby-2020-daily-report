@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to t(".log_out"), logout_path, method: :delete %>
+          <%= link_to t(".log_out"), destroy_user_session_path, method: :delete %>
         </li>
       </ul>
     </div>

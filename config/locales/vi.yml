@@ -79,6 +79,39 @@ vi:
       welcome_login: "Đăng nhập vào tài khoản của bạn"
       answer_account: "Bạn chưa có tài khoản?"
       sign_up: "Đăng ký"
+  users:
+    sessions:
+      new:
+        title: "Đăng nhập"
+        welcome_login: "Đăng nhập tài khoản của bạn"
+        log_in_btn: "Đăng nhập"
+    registrations:
+      new:
+        title: "Đăng ký"
+        register: "Register"
+        welcome_register: "Tạo tài khoản mới."
+        characters_minimum: "ký tự tối thiểu"
+    shared:
+      links:
+        sign_in: "Đăng nhập"
+        sign_up: "Đăng ký"
+        forgot_password: "Quên mật khẩu?"
+        not_receive_confirm: "Không nhận được thư xác nhận tài khoản?"
+        not_receive_unlock: "Không nhận được thư mở khóa?"
+    confirmations:
+      new:
+        title: "Gửi lại thư xác nhận tài khoản"
+        submit_btn: "Gửi lại thư xác nhận tài khoản"
+    passwords:
+      new:
+        title: "Quên mật khẩu?"
+        submit_btn: "Gửi thư xác nhận thay đổi mật khẩu"
+      edit:
+        title: "Thay đổi mật khẩu"
+        new_password: "Mật khẩu mới"
+        confirm_new_pass: "Xác nhận mật khẩu mới"
+        submit_btn: "Thay đổi mật khẩu"
+        characters_minimum: "ký tự tối thiểu"
   reports:
     create_success_notify: "Tạo thành công! Report đã được gửi đến manager."
     create_failed_notify: "Thất bại! Không thể tạo report."
