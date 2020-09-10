@@ -28,7 +28,24 @@
       <%= f.submit t(".log_in_btn"), class: "btn btn-success btn-lg btn-block" %>
     </div>
   <% end %>
+  <div>
+    <p class="text-center">
+      <%= t ".or_signin" %>
+    </p>
+  </div>
+  <div class="col-xs-12">
+    <%= link_to user_facebook_omniauth_authorize_path do %>
+      <div class="col-xs-5 auth auth-facebook pull-left">
+         <%= t ".facebook" %>
+      </div>
+    <% end %>
+    <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+      <div class="col-xs-5 auth auth-google pull-right">
+        <%= t ".google" %>
+      </div>
+    <% end %>
+  </div>
   <div class="text-center">
-    <%= render "devise/shared/links" %>
+    <%= render "users/shared/links" %>
   </div>
 </div>
