@@ -20,6 +20,8 @@ jobs:
   stage: test
   image: manhbnt/ruby:2.7.1
   services:
+  - image: redis:alpine
+    name: redis
   - image: mysql:5.7.22
     name: mysql_test
     environment:
@@ -30,6 +32,7 @@ jobs:
   before_script:
   - bundle _2.1.4_ install --path vendor/bundle
   script:
+  - RAILS_ENV=test bundle exec rails db:drop db:create db:migrate
   - bundle _2.1.4_ exec rspec
 
 - name: test:rubocop
