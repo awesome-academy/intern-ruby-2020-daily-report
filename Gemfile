@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
-ruby "2.7.1"
+ruby "2.7.0"
 
 gem "active_storage_validations", "0.8.2"
 gem "bcrypt", "3.1.13"
@@ -10,6 +10,7 @@ gem "bootstrap-sass", "3.4.1"
 gem "ckeditor", github: "galetahub/ckeditor"
 gem "config"
 gem "devise"
+gem "devise-async"
 gem "faker", "~> 2.12"
 gem "figaro"
 gem "i18n-js"
@@ -26,6 +27,7 @@ gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
+gem "sidekiq"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 
