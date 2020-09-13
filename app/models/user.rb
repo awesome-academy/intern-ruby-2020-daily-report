@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :requests, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :new_comments, dependent: :destroy
   has_one_attached :avatar
 
   validates :name, presence: true,

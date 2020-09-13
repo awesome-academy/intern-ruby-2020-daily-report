@@ -3,6 +3,8 @@ class Manager::ReportsController < ApplicationController
   before_action :paginate_reports, only: %i(index update)
   before_action :find_report, only: :show
 
+  load_and_authorize_resource
+
   def index; end
 
   # rubocop:disable Rails/SkipsModelValidations
@@ -17,6 +19,7 @@ class Manager::ReportsController < ApplicationController
   # rubocop:enable Rails/SkipsModelValidations
 
   def show
+    checked_new_comment params[:id]
     @user = @report.user
     @comments = Comment.includes_user
                        .by_report_id(params[:id])
