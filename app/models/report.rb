@@ -20,6 +20,10 @@ class Report < ApplicationRecord
 
   delegate :name, :email, to: :user, prefix: true
 
+  ransacker :created_at, type: :date do
+    Arel.sql("date(reports.created_at)")
+  end
+
   scope :includes_user, ->{includes :user}
   scope :recent_reports, ->{order created_at: :desc}
   scope :active_reports, ->{where deleted: false}
@@ -27,9 +31,6 @@ class Report < ApplicationRecord
   scope :by_users, ->(user_ids){where user_id: user_ids}
   scope :by_date_created, (lambda do |date|
     where("date(created_at) = :date", date: date) if date.present?
-  end)
-  scope :by_status, (lambda do |status|
-    where(status: status) if status.present?
   end)
   scope :order_by_created, (lambda do |type_order|
     type_order = type_order.presence || :desc

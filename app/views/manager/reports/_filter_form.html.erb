@@ -1,35 +1,32 @@
 <div class="input-group" id="form-report-filter">
-  <%= form_tag manager_reports_path, method: :get do %>
+  <%= search_form_for report, url: manager_reports_path do |f| %>
     <div class="col-xs-4">
       <p>
         <%= t ".date_created" %>
       </p>
-      <%= date_field :date, "", value: params[:date], class: "input-filter-report" %>
+      <%= f.date_field :created_at_eq, class: "input-filter-report" %>
     </div>
     <div class="col-xs-4">
       <p>
         <%= t ".status" %>
       </p>
-      <%= select_tag :status, options_for_select(Settings.select_option.filter_status, params[:status]), class: "input-filter-report" %>
+      <%= f.select :status_eq, Settings.select_option.filter_status, {}, { class: "input-filter-report" } %>
     </div>
     <div class="col-xs-4">
       <p>
         <%= t ".email" %>
       </p>
-      <%= text_field_tag :email, params[:email], class: "input-filter-report" %>
+      <%= f.text_field :user_email_cont, class: "input-filter-report" %>
     </div>
     <div class="col-xs-4">
       <p>
         <%= t ".name" %>
       </p>
-      <%= text_field_tag :name, params[:name], class: "input-filter-report" %>
+      <%= f.text_field :user_name_cont, class: "input-filter-report" %>
     </div>
-    <div class="col-xs-12 div-submit-filter-report">
-      <%= submit_tag t(".filter"), class: "btn btn-success" %>
-    </div>
-    <%= hidden_field_tag :order_status, params[:order_status] %>
-    <%= hidden_field_tag :order_created, params[:order_created] %>
     <%= hidden_field_tag :per_page, params[:per_page] %>
-    <%= hidden_field_tag :show_all, params[:show_all] %>
+    <div class="col-xs-4 div-submit-filter-report">
+      <%= f.submit t(".filter"), class: "btn btn-success" %>
+    </div>
   <% end %>
 </div></br>

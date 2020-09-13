@@ -81,10 +81,10 @@ class ReportsController < ApplicationController
   end
 
   def select_reports
-    @reports = Report.by_users(current_user.id)
-                     .active_reports
-                     .by_date_created(params[:date]&.first)
-                     .by_status(params[:status])
-                     .recent_reports
+    @report = Report.ransack params[:q]
+    @reports = @report.result
+                      .by_users(current_user.id)
+                      .active_reports
+                      .recent_reports
   end
 end

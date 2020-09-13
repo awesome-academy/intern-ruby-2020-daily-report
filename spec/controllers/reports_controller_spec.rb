@@ -55,19 +55,19 @@ RSpec.describe ReportsController, type: :controller do
       end
 
       context "when params status is waiting" do
-        before {get :index, params: {status: "waiting"}}
+        before {get :index, params: {q: {status_eq: Settings.reports.status.waiting}}}
 
         it { expect(assigns :reports).to eq(Report.waiting.recent_reports.slice(0, Settings.paginate.items_per_page)) }
       end
 
       context "when params status is checked" do
-        before {get :index, params: {status: "checked"}}
+        before {get :index, params: {q: {status_eq: Settings.reports.status.checked}}}
 
         it { expect(assigns :reports).to eq([]) }
       end
 
       context "when all params is given" do
-        before {get :index, params: {status: "waiting", page: 2, per_page: 10}}
+        before {get :index, params: {q: {status_eq: Settings.reports.status.waiting}, page: 2, per_page: 10}}
 
         it { expect(assigns :reports).to eq(reports.reverse.slice(10, 20)) }
       end

@@ -1,12 +1,13 @@
 <tr>
-  <td>
+  <td class="zui-sticky-col">
     <%= item_id report_counter, params[:page] %>
   </td>
   <td><%= report.created_at.strftime Settings.date.validate %></td>
   <td><%= report.today_plan.first Settings.report_table_text %></td>
+  <td><%= report.actual.first Settings.report_table_text %></td>
   <td><%= report.tomorrow_plan.first Settings.report_table_text %></td>
   <td><%= report.status %></td>
-  <td>
+  <td class="zui-sticky-col-right">
     <%= link_to t("detail"), report_path(report.id) %>
     |
     <% if report.waiting? %>

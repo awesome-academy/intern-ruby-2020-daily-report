@@ -37,8 +37,6 @@ class Manager::ReportsController < ApplicationController
 
   def user_in_division
     User.by_division_id(current_user.division_id)
-        .like_email(params[:email])
-        .like_name(params[:name])
   end
 
   def find_report
@@ -51,12 +49,14 @@ class Manager::ReportsController < ApplicationController
 
   def select_reports
     users = user_in_division
-    @reports = Report.includes_user
-                     .by_users(users)
-                     .active_reports
-                     .by_date_created(params[:date]&.first)
-                     .by_status(params[:status])
-                     .order_by_status(params[:order_status])
-                     .order_by_created params[:order_created]
+    @report = Report.ransack params[:q]
+    @reports = @report.result
+                      .includes(:user)
+                      .by_users(users)
+                      .active_reports
+    return if @report.sorts.present?
+
+    @reports = @reports.order_by_status(:asc)
+                       .order_by_created :desc
   end
 end

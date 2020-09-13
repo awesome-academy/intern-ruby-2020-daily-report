@@ -5,10 +5,10 @@
   </h2>
   <div class="col-xs-9 box-show">
     <div class="div-report-filter">
-      <%= render "filter_form" %>
+      <%= render "filter_form", report: @report %>
     </div>
     <div id="all-report">
-      <%= render "all_reports", reports: @reports %>
+      <%= render "all_reports", reports: @reports, report: @report %>
     </div>
   </div>
 </div>

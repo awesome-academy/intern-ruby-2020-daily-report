@@ -38,19 +38,19 @@
         <th><%= t ".name" %></th>
         <th><%= t ".email" %></th>
         <th>
-          <%= layout_order_report_created params[:order_created] %>
+          <%= sort_link report, :created_at, t(".date_created") %>
         </th>
         <th>
-          <%= layout_order_report_status params[:order_status] %>
+          <%= sort_link report, :status, t(".status") %>
         </th>
         <th><%= t ".action" %></th>
       </tr>
     </thead>
     <tbody id="body-report-table">
-      <%= render partial: "report_table", collection: @reports, as: :report %>
+      <%= render partial: "report_table", collection: reports, as: :report %>
     </tbody>
   </table>
-  <% if reports.total_count > Settings.paginate.per_page_default.to_i && !params[:show_all] %>
+  <% if reports.total_count > Settings.paginate.per_page_default.to_i && params[:show_all].blank? %>
     <div>
       <%= t ".per_page" %>
       <% if params[:per_page].eql? Settings.paginate.per_page_option_1 %>

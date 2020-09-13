@@ -1,20 +1,20 @@
 <div class="input-group" id="form-report-filter">
-  <%= form_tag reports_path, method: :get do %>
+  <%= search_form_for report do |f| %>
     <div class="col-xs-4">
       <p>
         <%= t ".date_created" %>
       </p>
-      <%= date_field :date, "", value: params[:date], class: "input-filter-report" %>
+      <%= f.date_field :created_at_eq, class: "input-filter-report" %>
     </div>
     <div class="col-xs-4">
       <p>
         <%= t ".status" %>
       </p>
-      <%= select_tag :status, options_for_select(Settings.select_option.filter_status, params[:status]), class: "input-filter-report" %>
+      <%= f.select :status_eq, Settings.select_option.filter_status, {}, { class: "input-filter-report" } %>
     </div>
     <%= hidden_field_tag :per_page, params[:per_page] %>
     <div class="col-xs-4 div-submit-filter-report">
-      <%= submit_tag t(".search"), class: "btn btn-success" %>
+      <%= f.submit t(".search"), class: "btn btn-success" %>
     </div>
   <% end %>
 </div></br>

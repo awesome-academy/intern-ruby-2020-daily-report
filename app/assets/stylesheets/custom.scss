@@ -407,3 +407,43 @@ a[aria-expanded='true']::before {
   background: $google-btn-background;
   color: white;
 }
+
+.zui-table thead th {
+  border: none;
+  padding: 10px;
+  text-align: left;
+  text-shadow: 1px 1px 1px white;
+  white-space: nowrap;
+}
+
+.zui-table tbody td {
+  padding: 10px;
+  text-shadow: 1px 1px 1px white;
+  white-space: nowrap;
+}
+
+.zui-wrapper {
+  position: relative;
+}
+
+.zui-scroller {
+  margin-left: 30px;
+  margin-right: 150px;
+  overflow-x: scroll;
+  overflow-y: visible;
+  padding-bottom: 5px;
+}
+
+.zui-table .zui-sticky-col {
+  left: 0;
+  position: absolute;
+  top: auto;
+  width: 30px;
+}
+
+.zui-table .zui-sticky-col-right {
+  right: 0;
+  position: absolute;
+  top: auto;
+  width: 150px;
+}

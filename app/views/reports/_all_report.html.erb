@@ -4,21 +4,30 @@
     (<span id="num-reports"><%= reports.total_count %></span>)
   </h4>
 </div>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th><%= t ".id" %></th>
-      <th><%= t ".create_at" %></th>
-      <th><%= t ".today_plan" %></th>
-      <th><%= t ".tomorrow_plan" %></th>
-      <th><%= t ".status" %></th>
-      <th><%= t ".action" %></th>
-    </tr>
-  </thead>
-  <tbody id="tbody-all-report">
-    <%= render partial: "report_table", collection: reports, as: :report %>
-  </tbody>
-</table>
+<div class="zui-wrapper">
+  <div class="zui-scroller">
+    <table class="table table-hover zui-table">
+      <thead>
+        <tr>
+          <th class="zui-sticky-col"><%= t ".id" %></th>
+          <th>
+            <%= sort_link report, :created_at, t(".date_created") %>
+          </th>
+          <th><%= t ".today_plan" %></th>
+          <th><%= t ".actual" %></th>
+          <th><%= t ".tomorrow_plan" %></th>
+          <th>
+            <%= sort_link report, :status, t(".status") %>
+          </th>
+          <th class="zui-sticky-col-right"><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <tbody id="tbody-all-report">
+        <%= render partial: "report_table", collection: reports, as: :report %>
+      </tbody>
+    </table>
+  </div>
+</div>
 <% if reports.total_count > Settings.paginate.per_page_default.to_i %>
   <div>
     <span><%= t ".per_page" %></span>

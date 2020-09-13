@@ -61,24 +61,6 @@ RSpec.describe Report, type: :model do
       it { expect(Report.by_users(1)).to eq(Report.where(user_id: 1)) }
     end
 
-    describe ".by_status" do
-      context "when status is waiting" do
-        it { expect(Report.by_status(:waiting)).to eq([report1, report4]) }
-      end
-
-      context "when status is checked" do
-        it { expect(Report.by_status(:checked)).to eq([report2]) }
-      end
-
-      context "when status is rejected" do
-        it { expect(Report.by_status(:rejected)).to eq([report3]) }
-      end
-
-      context "when status is nil" do
-        it { expect(Report.by_status(nil)).to eq([report1, report2, report3, report4]) }
-      end
-    end
-
     describe ".order_by_created" do
       context "when order by desc" do
         it { expect(Report.order_by_created(:desc)).to eq([report4, report3, report2, report1]) }
