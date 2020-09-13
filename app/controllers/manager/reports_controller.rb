@@ -3,6 +3,8 @@ class Manager::ReportsController < ApplicationController
   before_action :paginate_reports, only: %i(index update)
   before_action :find_report, only: :show
 
+  load_and_authorize_resource
+
   def index; end
 
   # rubocop:disable Rails/SkipsModelValidations

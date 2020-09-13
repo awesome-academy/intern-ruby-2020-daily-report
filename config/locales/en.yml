@@ -219,3 +219,4 @@ en:
       division: "Division"
   comments:
     can_not_comment: "Faild!"
+  authorized: "You are not authorized to access this page."

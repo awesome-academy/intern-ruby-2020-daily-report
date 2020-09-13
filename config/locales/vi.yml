@@ -219,3 +219,4 @@ vi:
       division: "Phòng ban"
   comments:
     can_not_comment: "Thất bại!"
+  authorized: "Bạn không có quyền truy cập trang này."

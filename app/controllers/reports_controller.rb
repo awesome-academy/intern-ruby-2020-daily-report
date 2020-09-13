@@ -5,6 +5,8 @@ class ReportsController < ApplicationController
   before_action :belong_to_division?, only: %i(new create)
   before_action :today_reports, only: :new
 
+  load_and_authorize_resource
+
   def index; end
 
   def new
