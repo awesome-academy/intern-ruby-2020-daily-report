@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable,
+         :confirmable, :async,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   USERS_PARAMS = %i(name email password password_confirmation avatar).freeze
   PASSWORD_REGEX = Settings.validates.password.regex

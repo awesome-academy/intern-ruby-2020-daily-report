@@ -7,10 +7,11 @@ stages:
 jobs:
 - name: build:prepare
   stage: build
-  image: manhbnt/ruby:2.7.1
+  image: sunci/ruby:2.7.0
   script:
   - cp database-ci.yml config/database.yml
-  - bundle _2.1.4_ install --path vendor/bundle
+  - bundle _2.1.2_ install --path vendor/bundle
+  - RAILS_ENV=test bundle _2.1.2_ exec sidekiq
   cache:
   - key: vendor_$CI_BRANCH
     paths:
@@ -18,8 +19,10 @@ jobs:
 
 - name: test:rspec
   stage: test
-  image: manhbnt/ruby:2.7.1
+  image: sunci/ruby:2.7.0
   services:
+  - image: redis:alpine
+    name: redis
   - image: mysql:5.7.22
     name: mysql_test
     environment:
@@ -28,14 +31,15 @@ jobs:
       MYSQL_PASSWORD: password_test
       MYSQL_ROOT_PASSWORD: password_test
   before_script:
-  - bundle _2.1.4_ install --path vendor/bundle
+  - bundle _2.1.2_ install --path vendor/bundle
   script:
-  - bundle _2.1.4_ exec rspec
+  - RAILS_ENV=test bundle exec rails db:drop db:create db:migrate
+  - bundle _2.1.2_ exec rspec
 
 - name: test:rubocop
   stage: test
-  image: manhbnt/ruby:2.7.1
+  image: sunci/ruby:2.7.0
   before_script:
-  - bundle _2.1.4_ install --path vendor/bundle
+  - bundle _2.1.2_ install --path vendor/bundle
   script:
   - bundle exec rubocop --require rubocop/formatter/checkstyle_formatter --format RuboCop::Formatter::CheckstyleFormatter --no-color --out .framgia-ci-reports/rubocop.xml app/ lib/
