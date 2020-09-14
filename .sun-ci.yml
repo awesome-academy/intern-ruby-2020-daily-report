@@ -11,6 +11,7 @@ jobs:
   script:
   - cp database-ci.yml config/database.yml
   - bundle _2.1.2_ install --path vendor/bundle
+  - RAILS_ENV=test bundle _2.1.2_ exec sidekiq
   cache:
   - key: vendor_$CI_BRANCH
     paths:
