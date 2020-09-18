@@ -11,10 +11,10 @@
     </div>
     <% if current_user.reports.any? %>
       <div class="div-report-filter">
-        <%= render "filter_form" %>
+        <%= render "filter_form", report: @report %>
       </div>
       <div id="all-report">
-        <%= render "all_report", reports: @reports, all_reports: @all_reports %>
+        <%= render "all_report", reports: @reports, all_reports: @all_reports, report: @report %>
       </div>
     <% end %>
   </div>

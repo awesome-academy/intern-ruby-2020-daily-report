@@ -48,7 +48,7 @@ icon:
   times: "times"
   check: "check"
   spinner: "spinner"
-report_table_text: 100
+report_table_text: 50
 rspec:
   default_password: "Ndt@1111111"
   factory_reports_size: 15

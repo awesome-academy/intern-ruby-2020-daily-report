@@ -40,9 +40,6 @@ class User < ApplicationRecord
   scope :like_email, (lambda do |email|
     where("email like :email", email: "%#{email}%") if email.present?
   end)
-  scope :like_name, (lambda do |name|
-    where("name like :name", name: "%#{name}%") if name.present?
-  end)
 
   class << self
     def from_omniauth auth
