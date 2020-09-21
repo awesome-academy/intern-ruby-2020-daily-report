@@ -1,4 +1,4 @@
-<tr>
+<tr id="<%= "report-#{report.id}" %>" class="<%= "report_new_comment" unless report_new_comment(report.id) %>">
   <td class="zui-sticky-col">
     <%= item_id report_counter, params[:page] %>
   </td>

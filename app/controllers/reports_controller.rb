@@ -29,6 +29,7 @@ class ReportsController < ApplicationController
   end
 
   def show
+    checked_new_comment params[:id]
     @user = @report.user
     @comments = Comment.includes_user
                        .by_report_id(params[:id])

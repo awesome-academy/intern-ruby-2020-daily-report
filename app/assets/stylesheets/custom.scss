@@ -447,3 +447,15 @@ a[aria-expanded='true']::before {
   top: auto;
   width: 150px;
 }
+
+.notification {
+  background: red;
+  padding: 0 5px;
+  border-radius: 100%;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.report_new_comment {
+  background-color: $new-comment-background;
+}
