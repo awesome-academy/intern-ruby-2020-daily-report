@@ -1,4 +1,15 @@
 module ApplicationHelper
+  def report_new_comment report_id
+    new_comment = NewComment.find_by user_id: current_user.id,
+                                     report_id: report_id
+    new_comment ? new_comment.checked : true
+  end
+
+  def new_comment_notify
+    current_user.new_comments
+                .by_checked false
+  end
+
   def item_id index, page
     if page
       index + Settings.paginate.index_plus +

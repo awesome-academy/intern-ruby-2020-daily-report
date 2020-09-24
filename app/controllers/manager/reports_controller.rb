@@ -19,6 +19,7 @@ class Manager::ReportsController < ApplicationController
   # rubocop:enable Rails/SkipsModelValidations
 
   def show
+    checked_new_comment params[:id]
     @user = @report.user
     @comments = Comment.includes_user
                        .by_report_id(params[:id])
