@@ -53,6 +53,11 @@ rspec:
   default_password: "Ndt@1111111"
   factory_reports_size: 15
   factory_comments_size: 10
+  invalid_id: 2000
+  report:
+    waiting: "waiting"
+    checked: "checked"
+    rejected: "rejected"
 reports:
   status:
     waiting: 0

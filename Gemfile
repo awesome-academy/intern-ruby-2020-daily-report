@@ -20,7 +20,7 @@ gem "jbuilder", "~> 2.7"
 gem "jquery-rails", "4.3.4"
 gem "kaminari"
 gem "mini_magick", "4.9.5"
-gem "pg"
+gem "mysql2"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
@@ -35,14 +35,16 @@ gem "webpacker", "~> 4.0"
 
 group :development, :test do
   gem "bundle-audit"
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "factory_bot_rails"
+  gem "pry"
   gem "rails-controller-testing"
   gem "rails_best_practices"
   gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
+  gem "simplecov"
+  gem "simplecov-rcov"
 end
 
 group :development do
@@ -57,7 +59,6 @@ group :test do
   gem "database_cleaner-active_record"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
-  gem "simplecov", require: false
   gem "webdrivers"
 end
 
