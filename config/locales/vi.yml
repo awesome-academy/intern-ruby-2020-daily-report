@@ -182,6 +182,7 @@ vi:
         name: "Tên"
       show:
         title: "Chi tiết"
+        find_report_error: "Không thể tìm report!"
     users:
       find_user_error: "Không tìm được thành viên."
       error_division: "There are something wrong!"

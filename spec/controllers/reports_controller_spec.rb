@@ -145,14 +145,14 @@ RSpec.describe ReportsController, type: :controller do
 
     describe "PUT #update" do
       context "when report_id is invalid" do
-        before {put :update, params: {id: 1000}}
+        before {put :update, params: {id: reports[0].id, report: {today_plan: ""}}}
 
-        it "should redirect to reports_path" do
-          expect(response).to redirect_to reports_path
+        it "should redirect to edit_reports_path" do
+          expect(response).to redirect_to edit_report_path reports[0].id
         end
 
         it "should render danger flash" do
-          expect(flash[:danger]).to eq I18n.t("reports.find_report_error")
+          expect(flash[:danger]).to eq I18n.t("reports.edit_report_faild")
         end
       end
 
