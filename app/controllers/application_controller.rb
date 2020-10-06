@@ -32,4 +32,15 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def checked_new_comment report_id
+    current_user.new_comments
+                .by_report_id(report_id)
+                .update checked: true
+  end
+
+  def new_comment_notify user_id
+    NewComment.by_user_id(user_id)
+              .by_checked false
+  end
 end

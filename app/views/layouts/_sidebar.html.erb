@@ -16,6 +16,13 @@
         <%= link_to reports_path do %>
           <i class="fas fa-tasks sidebar-icon"></i>
           <%= t ".report" %>
+          <div class="pull-right notification" id="side-bar-new-comment-notify">
+            <% if new_comment_notify.present? %>
+              <span>
+                <%= new_comment_notify.count %>
+              </span>
+            <% end %>
+          </div>
         <% end %>
       </li>
       <li>
@@ -41,6 +48,13 @@
         <%= link_to manager_reports_path do %>
           <i class="fas fa-tasks sidebar-icon"></i>
           <%= t ".report" %>
+          <div class="pull-right notification" id="side-bar-new-comment-notify">
+            <% if new_comment_notify.present? %>
+              <span>
+                <%= new_comment_notify.count %>
+              </span>
+            <% end %>
+          </div>
         <% end %>
       </li>
       <li>

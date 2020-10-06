@@ -1,7 +1,6 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'colors';
-@import 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700';
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -446,4 +445,16 @@ a[aria-expanded='true']::before {
   position: absolute;
   top: auto;
   width: 150px;
+}
+
+.notification {
+  background: red;
+  padding: 0 5px;
+  border-radius: 100%;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.report_new_comment {
+  background-color: $new-comment-background;
 }

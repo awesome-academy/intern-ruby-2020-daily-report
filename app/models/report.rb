@@ -6,6 +6,7 @@ class Report < ApplicationRecord
 
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :new_comments, dependent: :destroy
 
   validates :today_plan, presence: true,
     length: {maximum: Settings.validates.report.max_length}

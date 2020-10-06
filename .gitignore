@@ -28,7 +28,6 @@
 /config/master.key
 
 /test
-/config/database.yml
 
 /public/packs
 /public/packs-test
